@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NavBar from "./modules/NavBar.js";
 import { Router } from "@reach/router";
 import jwt_decode from "jwt-decode";
 
@@ -43,6 +44,7 @@ const App = () => {
 
   return (
     <>
+      <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <NotFound default />
