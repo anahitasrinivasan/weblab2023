@@ -20,7 +20,7 @@
   }
   
   .NavBar-link:hover {
-    opacity: 0.8;
+    color: var(--primary--dim);
   }
   
   .NavBar-link.NavBar-login {
