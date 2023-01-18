@@ -4,7 +4,11 @@ import { Router } from "@reach/router";
 import jwt_decode from "jwt-decode";
 
 import NotFound from "./pages/NotFound.js";
-import Skeleton from "./pages/Skeleton.js";
+import Home from "./pages/Home.js";
+import Journal from "./pages/Journal.js";
+import Profile from "./pages/Profile.js";
+import Friends from "./pages/Friends.js";
+
 
 import "../utilities.css";
 
@@ -46,7 +50,10 @@ const App = () => {
     <>
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
       <Router>
-        <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+        <Home path="/" />
+        <Journal path="/journal/:userId" />
+        <Profile path="/profile/:userId" />
+        <Friends path="/friends/:userId" />
         <NotFound default />
       </Router>
     </>
