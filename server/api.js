@@ -61,7 +61,12 @@ router.post("/journal", auth.ensureLoggedIn, (req, res) => {
   });
 
   newEntry.save().then((entry) => res.send(entry));
-})
+});
+
+router.get("/users", (req, res) => {
+  // res.send(req.query);
+  User.find({ name: req.query.search }).then((users) => res.send(users));
+});
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
