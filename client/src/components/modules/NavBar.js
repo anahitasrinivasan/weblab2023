@@ -30,7 +30,7 @@ const NavBar = ({userId, handleLogin, handleLogout}) => {
             )}
             <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
             {userId ? (
-                <button
+                <button className="NavBar-login"
                 onClick={() => {
                     googleLogout();
                     handleLogout();

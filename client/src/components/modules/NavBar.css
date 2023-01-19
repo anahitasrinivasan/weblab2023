@@ -1,6 +1,9 @@
 .NavBar-container {
     padding: var(--s) var(--m);
     background-color: var(--green);
+    position: fixed; 
+    top: 0; 
+    width: 100%;
   }
   
   .NavBar-title {
@@ -22,6 +25,26 @@
     color: var(--white);
   }
   
+  .NavBar-login {
+    background-color: var(--honeydew);
+    color: var(--green);
+    margin-left: var(--m);
+    text-decoration: none;
+    font-family: "Roboto";
+    font-size: 16px;
+    border-radius: var(--s);
+    border-color: var(--green);
+    border-style: solid;
+    padding: 0.3rem;
+    text-align: center;
+    transition: all 0.7s;
+  }
+
+  .NavBar-login:hover {
+    background-color: var(--green);
+    color: var(--honeydew);
+  }
+
   .NavBar-link.NavBar-login {
     opacity: 1;
   }

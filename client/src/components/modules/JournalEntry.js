@@ -51,7 +51,7 @@ const JournalEntry = (props) => {
     return (
         <div>
             <div className="JournalEntry-input">
-                <input
+                <textarea
                     type="text"
                     className="JournalEntry-content"
                     placeholder={props.defaultEntryText}

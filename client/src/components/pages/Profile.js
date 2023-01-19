@@ -52,10 +52,10 @@ const Profile = (props) => {
             </div>
         ));
     } else {
-        entriesList = <div>No entries!</div>;
-        moodList = <div>No entries!</div>;
-        sleepList = <div>No entries!</div>;
-        waterList = <div>No entries!</div>;
+        entriesList = <div className="Profile-container">No entries!</div>;
+        moodList = <div className="Profile-container">No entries!</div>;
+        sleepList = <div className="Profile-container">No entries!</div>;
+        waterList = <div className="Profile-container">No entries!</div>;
     }
 
     return (
