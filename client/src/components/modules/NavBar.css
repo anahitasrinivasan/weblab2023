@@ -1,6 +1,6 @@
 .NavBar-container {
     padding: var(--s) var(--m);
-    background-color: var(--primary);
+    background-color: var(--green);
   }
   
   .NavBar-title {
@@ -14,13 +14,12 @@
   
   .NavBar-link,
   .NavBar-link:visited {
-    color: var(--white);
-    opacity: 0.6;
+    color: var(--honeydew);
     text-decoration: none;
   }
   
   .NavBar-link:hover {
-    color: var(--primary--dim);
+    color: var(--white);
   }
   
   .NavBar-link.NavBar-login {

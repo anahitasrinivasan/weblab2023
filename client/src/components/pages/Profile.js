@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import { get } from "../../utilities";
 
+import "./Profile.css";
+
 const Profile = (props) => {
     const [entries, setEntries] = useState([]);
 
@@ -17,12 +19,12 @@ const Profile = (props) => {
     const hasEntries = entries.length !== 0;
     if (hasEntries) {
         entriesList = entries.map((entry) => (
-            <div>
-                {entry.creator_name}
-                {entry.content}
-                {entry.mood}
-                {entry.sleep}
-                {entry.water}
+            <div className="Profile-container">
+                <div className="Profile-user">{entry.creator_name}</div>
+                <div><b>journal entry: </b>{entry.content}</div>
+                <div><b>mood: </b>{entry.mood}</div>
+                <div><b>sleep: </b>{entry.sleep}</div>
+                <div><b>water: </b>{entry.water}</div>
             </div>
         ));
     } else {

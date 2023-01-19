@@ -11,10 +11,12 @@ import Friends from "./pages/Friends.js";
 
 
 import "../utilities.css";
+import "./App.css";
 
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
+
 
 /**
  * Define the "App" component
@@ -49,13 +51,15 @@ const App = () => {
   return (
     <>
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-      <Router>
-        <Home path="/" />
-        <Journal path="/journal/:userId" />
-        <Profile path="/profile/:userId" />
-        <Friends path="/friends/:userId" />
-        <NotFound default />
-      </Router>
+      <div className="App-container">
+        <Router>
+          <Home path="/" />
+          <Journal path="/journal/:userId" />
+          <Profile path="/profile/:userId" />
+          <Friends path="/friends/:userId" />
+          <NotFound default />
+        </Router>
+      </div>
     </>
   );
 };

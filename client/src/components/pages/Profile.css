@@ -1,0 +1,19 @@
+.Profile-container {
+    border: var(--beaver) 1px solid;
+    border-radius: var(--m);
+    margin-top: var(--m);
+    color: var(--beaver);
+    padding: 10px;
+}
+  
+.Profile-container:first-of-type {
+    margin-top: var(--l);
+}
+
+.Profile-user {
+    font-weight: 1000;
+}
+
+.Profile-title {
+    font-weight: 600;
+}

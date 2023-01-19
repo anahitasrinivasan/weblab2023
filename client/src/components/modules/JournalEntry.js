@@ -50,38 +50,52 @@ const JournalEntry = (props) => {
 
     return (
         <div>
-            <input
-                type="text"
-                placeholder={props.defaultEntryText}
-                value={entryValue}
-                onChange={handleEntryChange}
-            />
-            <input 
-                type="number"
-                placeholder={props.defaultSleepText}
-                value={sleepValue}
-                onChange={handleSleepChange}
-            />
-            <input 
-                type="number"
-                placeholder={props.defaultHydrationText}
-                value={hydrationValue}
-                onChange={handleHydrationChange}
-            />
-            <select onChange={handleMoodChange}>
-                <option value="" disabled selected>select mood from 1-5</option>
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={4}>4</option>
-                <option value={5}>5</option>
-            </select>
-            <button
-                type="submit"
-                value="Submit"
-                onClick={handleSubmit}>
-                submit
-            </button>
+            <div className="JournalEntry-input">
+                <input
+                    type="text"
+                    className="JournalEntry-content"
+                    placeholder={props.defaultEntryText}
+                    value={entryValue}
+                    onChange={handleEntryChange}
+                />
+            </div>
+            <div className="JournalEntry-input">
+                <input 
+                    type="number"
+                    className="JournalEntry-number"
+                    placeholder={props.defaultSleepText}
+                    value={sleepValue}
+                    onChange={handleSleepChange}
+                />
+            </div>
+            <div className="JournalEntry-input">
+                <input 
+                    type="number"
+                    className="JournalEntry-number"
+                    placeholder={props.defaultHydrationText}
+                    value={hydrationValue}
+                    onChange={handleHydrationChange}
+                />
+            </div>
+            <div className="JournalEntry-input">
+                <select onChange={handleMoodChange} className="JournalEntry-select">
+                    <option value="" disabled selected>select mood from 1-5</option>
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
+                    <option value={5}>5</option>
+                </select>
+            </div>
+            <div className="JournalEntry-input">
+                <button
+                    type="submit"
+                    value="Submit"
+                    className="JournalEntry-button"
+                    onClick={handleSubmit}>
+                    submit
+                </button>
+            </div>
             <h1>{textValue}</h1>
         </div>
     );
