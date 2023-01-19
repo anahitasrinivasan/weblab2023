@@ -33,9 +33,9 @@ const socketManager = require("./server-socket");
 
 // Server configuration below
 // TODO change connection URL after setting up your team database
-const mongoConnectionURL = "mongodb+srv://anahita:UiLGFJnDzjFFVGpZ@absolutelywildcluster.tyfltow.mongodb.net/?retryWrites=true&w=majority";
+const mongoConnectionURL = "mongodb+srv://moody:JBFC2EsOrSBhsT43@moodycluster.2ghqweo.mongodb.net/?retryWrites=true&w=majority";
 // TODO change database name to the name you chose
-const databaseName = "asbolutelywildcluster";
+const databaseName = "moodycluster";
 
 // connect to mongodb
 mongoose

@@ -35,7 +35,17 @@ const JournalEntry = (props) => {
     //called whenever the user hits the submit button
     const handleSubmit = (event) => {
         event.preventDefault();
-        setTextValue(entryValue);
+
+        const body = {
+            content: entryValue,
+            mood: moodValue,
+            sleep: sleepValue,
+            water: hydrationValue, 
+        };
+        post("/api/journal", body).then((story) => {
+            // display "done" for now to show that we finished successfully
+            setTextValue("done");
+        });
     }
 
     return (
@@ -70,7 +80,7 @@ const JournalEntry = (props) => {
                 type="submit"
                 value="Submit"
                 onClick={handleSubmit}>
-                Submit
+                submit
             </button>
             <h1>{textValue}</h1>
         </div>
