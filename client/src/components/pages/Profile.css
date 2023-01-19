@@ -1,9 +1,19 @@
 .Profile-container {
-    border: var(--beaver) 1px solid;
-    border-radius: var(--m);
+    color: var(--green);
+    width: 100%;
+    padding: 1rem;
+    list-style: none;
+    cursor: pointer;
     margin-top: var(--m);
-    color: var(--beaver);
-    padding: 10px;
+    border: 1px solid var(--green);
+    border-radius: 1rem;
+    background-color: var(--honeydew);
+}
+
+.Profile-container:hover {
+    background: var(--green);
+    color: var(--honeydew);
+    transition: all 0.5s;
 }
   
 .Profile-container:first-of-type {
