@@ -30,8 +30,8 @@
   font-family: "Roboto";
   font-size: 16px;
   border-radius: var(--m);
-  border-color: var(--green);
-  border-style: solid;
+  border: none;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
   border-width: 1px;
   background-color: var(--honeydew);
   color: var(--green);
