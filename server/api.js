@@ -45,10 +45,10 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 
 router.get("/journals", auth.ensureLoggedIn, (req, res) => {
-  Entry.find({creator_id: req.user._id}).then((entries) => {
+  Entry.find({ creator_id: req.user._id }).then((entries) => {
     res.send(entries);
   });
-})
+});
 
 router.post("/journal", auth.ensureLoggedIn, (req, res) => {
   const newEntry = new Entry({
