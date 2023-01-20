@@ -87,15 +87,6 @@ router.get("/users", (req, res) => {
   User.find({ name: req.query.search }).then((users) => res.send(users));
 });
 
-router.get("/idNumName", (req, res) => {
-  User.find().then((users) => {
-    const userIds = users.map((user) => {
-      return user.idNum;
-    });
-    res.send(userIds);
-  });
-});
-
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);

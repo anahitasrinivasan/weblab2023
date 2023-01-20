@@ -2,6 +2,10 @@ const { OAuth2Client } = require("google-auth-library");
 const User = require("./models/user");
 const socketManager = require("./server-socket");
 
+// const { get } = require("../client/src/utilities.js");
+
+// import { get } from "../client/src/utilities.js";
+
 // create a new OAuth client used to verify google sign-in
 //    TODO: replace with your own CLIENT_ID
 const CLIENT_ID = "770563466492-votd285cfb04ssp4vrgjgoch464n6qd5.apps.googleusercontent.com";
@@ -19,6 +23,14 @@ function verify(token) {
 
 const makeIdNum = () => {
   let newNum = Math.floor(Math.random() * 1000001);
+  User.find().then((users) => {
+    const userIds = users.map((user) => {
+      return user.idNum;
+    });
+    while (userIds.includes(newNum)) {
+      newNum = Math.floor(Math.random() * 1000001);
+    }
+  });
   return newNum;
 };
 
