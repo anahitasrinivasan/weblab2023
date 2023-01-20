@@ -9,3 +9,10 @@
   border-radius: 1rem;
   background-color: var(--honeydew);
 }
+
+.FriendStatus-container {
+  font-style: italic;
+  border-radius: 1rem;
+  padding: 0.25rem;
+  background-color: #d5e9dc;
+}

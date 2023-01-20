@@ -63,6 +63,20 @@ router.post("/journal", auth.ensureLoggedIn, (req, res) => {
   newEntry.save().then((entry) => res.send(entry));
 });
 
+router.get("/friendInfo", (req, res) => {
+  // User.find({ _id: req.query._id }).then((friend) => {
+  //   const friendInfo = {
+  //     userRequested: friend[0].userRequested,
+  //     requestedByUser: friend[0].requestedByUser,
+  //     friends: friend[0].friends,
+  //   };
+  //   res.send(friendInfo);
+  // });
+  User.find({ _id: req.query._id }).then((friend) => {
+    res.send(friend[0]);
+  });
+});
+
 router.get("/users", (req, res) => {
   // res.send(req.query);
   User.find({ name: req.query.search }).then((users) => res.send(users));
