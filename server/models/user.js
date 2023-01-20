@@ -6,6 +6,7 @@ const UserSchema = new mongoose.Schema({
   userRequested: Array,
   requestedByUser: Array,
   friends: Array,
+  idNum: Number,
 });
 
 // compile model from schema
