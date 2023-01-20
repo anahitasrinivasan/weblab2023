@@ -67,12 +67,13 @@ const Profile = (props) => {
                 <Tab id="water" activeTab={activeTab} setActiveTab={setActiveTab}/>
             </ul>
             <div>
-                <Content id="entries" activeTab={activeTab} items={entriesList}/>
-                <Content id="moods" activeTab={activeTab} items={moodList}/>
-                <Content id="sleep" activeTab={activeTab} items={sleepList}/>
-                <Content id="water" activeTab={activeTab} items={waterList}/>
+                <Content id="entries" activeTab={activeTab} items={entriesList} graphItems={entries} type="content"/>
+                <Content id="moods" activeTab={activeTab} items={moodList} graphItems={entries} type="mood"/>
+                <Content id="sleep" activeTab={activeTab} items={sleepList} graphItems={entries} type="sleep"/>
+                <Content id="water" activeTab={activeTab} items={waterList} graphItems={entries} type="hydration"/>
             </div>
         </div>
+
     );
 };
 
