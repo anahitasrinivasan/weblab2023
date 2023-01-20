@@ -4,7 +4,7 @@ import Search from "../modules/Search.js";
 // THIS IS WHERE THE STUFF ON THE DEFAULT FRIENDS SCREEN WILL GO
 
 const Friends = (props) => {
-  return <Search />;
+  return <Search userId={props.userId} />;
 };
 
 export default Friends;

@@ -7,13 +7,11 @@ const Search = (props) => {
   const [usersFound, setUsersFound] = useState([]);
 
   const onSubmit = (value) => {
-    console.log(value);
     // Get the users with this name
-    //get("/api/chat", { recipient_id: recipient._id }).then((messages) => {
 
     get("/api/users", { search: value }).then((users) => {
       const userNames = users.map((user) => {
-        return <PersonFound name={user["name"]} friendId={user["_id"]} />;
+        return <PersonFound name={user["name"]} friend={user} userId={props.userId} />;
         //return user["name"];
       });
       console.log(userNames);
