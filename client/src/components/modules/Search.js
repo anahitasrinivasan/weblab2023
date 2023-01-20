@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { get } from "../../utilities";
+import PersonFound from "./PersonFound.js";
 
 const Search = (props) => {
   const [value, setValue] = useState("");
@@ -12,7 +13,8 @@ const Search = (props) => {
 
     get("/api/users", { search: value }).then((users) => {
       const userNames = users.map((user) => {
-        return user["name"];
+        return <PersonFound name={user["name"]} friendId={user["_id"]} />;
+        //return user["name"];
       });
       console.log(userNames);
       setUsersFound(userNames);
@@ -38,7 +40,7 @@ const Search = (props) => {
       <button type="submit" value="Submit" onClick={handleSubmit}>
         Submit
       </button>
-      <div>{usersFound[0]}</div>
+      <div>{usersFound}</div>
     </div>
   );
 };

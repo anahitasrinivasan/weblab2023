@@ -1,15 +1,14 @@
 import React, { useState } from "react";
+import "./PersonFound.css";
 
 const PersonFound = (props) => {
   /**
    * @property {String} name
-   * @property {Number} friend_id
+   * @property {Number} friendId
+
    */
 
-  return (
-    <div>
-      {props.name}
-      {props.friend_id}
-    </div>
-  );
+  return <div className="PersonFound-container">{props.name}</div>;
 };
+
+export default PersonFound;

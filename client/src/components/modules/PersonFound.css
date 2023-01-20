@@ -1,0 +1,11 @@
+.PersonFound-container {
+  color: var(--green);
+  width: 100%;
+  padding: 1rem;
+  list-style: none;
+  cursor: pointer;
+  margin-top: var(--m);
+  border: 1px solid var(--green);
+  border-radius: 1rem;
+  background-color: var(--honeydew);
+}
