@@ -73,7 +73,12 @@ router.get("/friendInfo", (req, res) => {
   //   res.send(friendInfo);
   // });
   User.find({ _id: req.query._id }).then((friend) => {
-    res.send(friend[0]);
+    const friendInfo = {
+      userRequested: friend[0].userRequested,
+      requestedByUser: friend[0].requestedByUser,
+      friends: friend[0].friends,
+    };
+    res.send(friendInfo);
   });
 });
 
