@@ -17,6 +17,11 @@ function verify(token) {
     .then((ticket) => ticket.getPayload());
 }
 
+const makeIdNum = () => {
+  let newNum = Math.floor(Math.random() * 1000001);
+  return newNum;
+};
+
 // gets user from DB, or makes a new account if it doesn't exist yet
 function getOrCreateUser(user) {
   // the "sub" field means "subject", which is a unique identifier for each user
@@ -29,6 +34,7 @@ function getOrCreateUser(user) {
       userRequested: [],
       requestedByUser: [],
       friends: [],
+      idNum: makeIdNum(),
     });
 
     return newUser.save();
