@@ -84,11 +84,11 @@ form {
 }
 
 .u-link {
-  color: var(--primary);
+  color: var(--beaver);
   text-decoration: none;
   cursor: pointer;
 }
 
 .u-link:hover {
-  color: var(--primary--dim);
+  color: var(--silverpink);
 }

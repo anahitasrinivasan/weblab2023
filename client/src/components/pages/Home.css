@@ -1,0 +1,35 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    }
+
+.flex-item:nth-child(1) {
+    order: 0;
+    flex: 1 1 50%;
+    align-self: auto;
+    }
+
+.flex-item:nth-child(2) {
+    order: 0;
+    flex: 1 1 50%;
+    align-self: auto;
+}
+
+.image-link {
+    font-size: 8px;
+}
+
+img {
+    padding: 10%;
+    max-width: 100%;
+}
+
+.text {
+    padding: 10%;
+    text-align: center;
+    color: var(--green);
+}
