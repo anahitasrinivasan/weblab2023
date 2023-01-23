@@ -16,3 +16,37 @@
   padding: 0.25rem;
   background-color: #d5e9dc;
 }
+
+.FriendingButton {
+  background-color: var(--green);
+  color: var(--honeydew);
+  margin-left: var(--m);
+  text-decoration: none;
+  font-family: "Roboto";
+  font-size: 16px;
+  border-radius: var(--s);
+  border-color: var(--green);
+  border-style: solid;
+  padding: 0.3rem;
+  text-align: center;
+  transition: all 0.7s;
+}
+
+.FriendingButton:hover {
+  background-color: var(--honeydew);
+  color: var(--green);
+  margin-left: var(--m);
+  text-decoration: none;
+  font-family: "Roboto";
+  font-size: 16px;
+  border-radius: var(--s);
+  border-color: var(--green);
+  border-style: solid;
+  padding: 0.3rem;
+  text-align: center;
+  transition: all 0.7s;
+}
+
+.u-rightAdjust {
+  text-align: right;
+}
