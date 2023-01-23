@@ -102,7 +102,7 @@ router.post("/request", (req, res) => {
     requestee.save();
   });
 
-  res.send("friend request sent");
+  // res.send("friend request sent");
 });
 
 router.post("/unrequest", (req, res) => {
@@ -116,7 +116,7 @@ router.post("/unrequest", (req, res) => {
     unrequested.save();
   });
 
-  res.send("unrequested");
+  // res.send("unrequested");
 });
 
 router.post("/friend", (req, res) => {
@@ -139,7 +139,7 @@ router.post("/friend", (req, res) => {
     acceptee.save();
   });
 
-  res.send("friend accepted");
+  // res.send("friend accepted");
 });
 
 router.post("/unfriend", (req, res) => {
@@ -155,7 +155,7 @@ router.post("/unfriend", (req, res) => {
     rejected.save();
   });
 
-  res.send("unfriended");
+  // res.send("unfriended");
 });
 
 // anything else falls to this "not found" case
