@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { get } from "../../utilities";
+import { get, post } from "../../utilities";
 import "./PersonFound.css";
 
 const PersonFound = (props) => {
@@ -23,9 +23,9 @@ const PersonFound = (props) => {
         if (friendInfo["friends"].includes(userId)) {
           setFriendStatus("friends");
         } else if (friendInfo.userRequested.includes(userId)) {
-          setFriendStatus("this user has requested you as a friend");
-        } else if (friendInfo.requestedByUser.includes(userId)) {
           setFriendStatus("you've requested this user as a friend");
+        } else if (friendInfo.requestedByUser.includes(userId)) {
+          setFriendStatus("this user has requested you as a friend");
         } else {
           console.log("no relation");
           setFriendStatus("no relation");
@@ -34,17 +34,52 @@ const PersonFound = (props) => {
     }
   };
 
+  const requestFriend = () => {
+    console.log("requested friend");
+    post("/api/request", { requesting: props.friend._id }).then(() => {
+      setFriendStatus("you've requested this user as a friend");
+    });
+  };
+
+  const acceptRequest = () => {
+    //accept a friend request
+  };
+
+  const unrequest = () => {
+    //unrequest a user
+  };
+
+  const unfriend = () => {
+    //unfriend someone
+  };
+
   const findFriendingButton = (friendStatus) => {
     if (friendStatus === "this is you") {
       return null;
     } else if (friendStatus === "friends") {
-      return <button className="FriendingButton">Unfriend</button>;
+      return (
+        <button className="FriendingButton" onClick={unfriend}>
+          Unfriend
+        </button>
+      );
     } else if (friendStatus === "this user has requested you as a friend") {
-      return <button className="FriendingButton">Friend</button>;
+      return (
+        <button className="FriendingButton" onClick={acceptRequest}>
+          Friend
+        </button>
+      );
     } else if (friendStatus === "you've requested this user as a friend") {
-      return <button className="FriendingButton">Unrequest</button>;
+      return (
+        <button className="FriendingButton" onClick={unrequest}>
+          Unrequest
+        </button>
+      );
     } else if (friendStatus === "no relation") {
-      return <button className="FriendingButton">Request</button>;
+      return (
+        <button className="FriendingButton" onClick={requestFriend}>
+          Request
+        </button>
+      );
     }
   };
 

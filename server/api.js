@@ -87,6 +87,22 @@ router.get("/users", (req, res) => {
   User.find({ name: req.query.search }).then((users) => res.send(users));
 });
 
+router.post("/request", (req, res) => {
+  //send a friend request
+  // const requester=req.user._id
+  // const requestee=req.body.requesting
+
+  User.findOne({ _id: req.user._id }).then((requester) => {
+    requester.requestedByUser = requester.requestedByUser.concat(req.body.requesting);
+    requester.save();
+  });
+
+  User.findOne({ _id: req.body.requesting }).then((requestee) => {
+    requestee.userRequested = requestee.userRequested.concat(req.user._id);
+    requestee.save();
+  });
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);
