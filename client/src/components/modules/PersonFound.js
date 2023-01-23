@@ -23,9 +23,10 @@ const PersonFound = (props) => {
         if (friendInfo["friends"].includes(userId)) {
           setFriendStatus("friends");
         } else if (friendInfo.userRequested.includes(userId)) {
-          setFriendStatus("this user has requested you as a friend");
-        } else if (friendInfo.requestedByUser.includes(userId)) {
           setFriendStatus("you've requested this user as a friend");
+        } else if (friendInfo.requestedByUser.includes(userId)) {
+          setFriendStatus("this user has requested you as a friend");
+          
         } else {
           console.log("no relation");
           setFriendStatus("no relation");
