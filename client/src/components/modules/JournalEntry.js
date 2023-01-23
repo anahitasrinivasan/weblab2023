@@ -40,6 +40,10 @@ const JournalEntry = (props) => {
             setTextValue("please fill out all entries before submitting.");
         }
 
+        else if((sleepValue < 0) || (hydrationValue < 0)) {
+            setTextValue("please make sure your sleep and hydration values are not negative!");
+        }
+
         else {
             const body = {
                 content: entryValue,
