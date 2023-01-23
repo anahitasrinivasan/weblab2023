@@ -109,6 +109,8 @@ router.post("/friend", (req, res) => {
   //accept a friend request
   //newFriend is the new friend's ID
 
+  console.log("recieved request");
+
   //change the accepter's status
   User.findOne({ _id: req.user._id }).then((accepter) => {
     accepter.friends = accepter.friends.concat(req.body.newFriend);
