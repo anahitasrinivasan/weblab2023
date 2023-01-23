@@ -36,16 +36,22 @@ const JournalEntry = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const body = {
-            content: entryValue,
-            mood: moodValue,
-            sleep: sleepValue,
-            water: hydrationValue, 
-        };
-        post("/api/journal", body).then((story) => {
-            // display "done" for now to show that we finished successfully
-            setTextValue("done");
-        });
+        if((entryValue === "") || (!moodValue) || (!sleepValue) || (!hydrationValue)) {
+            setTextValue("nope bby gorl");
+        }
+
+        else {
+            const body = {
+                content: entryValue,
+                mood: moodValue,
+                sleep: sleepValue,
+                water: hydrationValue, 
+            };
+            post("/api/journal", body).then((story) => {
+                // display "done" for now to show that we finished successfully
+                setTextValue("done");
+            });
+        }
     }
 
     return (
@@ -78,14 +84,34 @@ const JournalEntry = (props) => {
                 />
             </div>
             <div className="JournalEntry-input">
-                <select onChange={handleMoodChange} className="JournalEntry-select">
-                    <option value="" disabled selected>select mood from 1-5</option>
-                    <option value={1}>1</option>
-                    <option value={2}>2</option>
-                    <option value={3}>3</option>
-                    <option value={4}>4</option>
-                    <option value={5}>5</option>
-                </select>
+
+                <label>
+                    <input type="radio" name="moods" onChange={handleMoodChange} value={1} />
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927551.png"></img>
+                    <a href="https://www.flaticon.com/free-icons/sad-face" title="sad face icons">Sad face icons created by th studio - Flaticon</a>
+                </label>
+                <label>
+                    <input type="radio" name="moods" onChange={handleMoodChange} value={2} />
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927561.png"></img>
+                    <a href="https://www.flaticon.com/free-icons/sad" title="sad icons">Sad icons created by Vitaly Gorbachev - Flaticon</a>
+                </label>
+                <label>
+                    <input type="radio" name="moods" onChange={handleMoodChange} value={3} />
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927557.png"></img>
+                    <a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">Emoji icons created by Vitaly Gorbachev - Flaticon</a>
+                </label>
+                <label>
+                    <input type="radio" name="moods" onChange={handleMoodChange} value={4} />
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927566.png"></img>
+                    <a href="https://www.flaticon.com/free-icons/smile" title="smile icons">Smile icons created by Vitaly Gorbachev - Flaticon</a>
+                </label>
+                <label>
+                    <input type="radio" name="moods" onChange={handleMoodChange} value={5} />
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927554.png"></img>
+                    <a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">Emoji icons created by Vitaly Gorbachev - Flaticon</a>
+                </label>
+
+                
             </div>
             <div className="JournalEntry-input">
                 <button
