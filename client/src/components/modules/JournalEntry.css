@@ -55,7 +55,69 @@
   height: 50px;
 }
 
+.form-text {
+  color: var(--green)
+}
+
+h1 {
+  font-size: 16px;
+  color: var(--honeydew);
+  display: inline-block;
+  background-color: var(--green);
+  border: 1px solid var(--honeydew);
+  padding: 10px;
+  border-radius: 10px;
+}
+
 ::placeholder {
   color: var(--green)
+}
+
+[type=radio] { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + img {
+  cursor: pointer;
+}
+
+[type=radio]:checked + img {
+  outline: 2px solid var(--green);
+}
+
+img {
+  width: 7%;
+  height: auto;
+  border-radius: 50%;
+}
+
+p {
+  font-size: 8px;
+  color: var(--beaver);
+}
+p a {
+  color: var(--beaver);
+}
+
+.cry {
+  background-color: #FD5D5D;
+}
+
+.sad {
+  background-color: #FDA05D;
+}
+
+.mid {
+  background-color: #FFD568;
+}
+
+.happy {
+  background-color: #CDDA7E;
+}
+
+.thrilled {
+  background-color: #88CE7D;
 }
 
