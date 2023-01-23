@@ -158,6 +158,18 @@ router.post("/unfriend", (req, res) => {
   // res.send("unfriended");
 });
 
+router.get("/friends", (req, res) => {
+  User.findOne({ _id: req.user._id }).then((user) => {
+    const friends = user.friends;
+    const friendsList = friends.map((friend) => {
+      User.findOne({ _id: friend }).then((friendObject) => {
+        return friendObject;
+      });
+    });
+    res.send(friendsList);
+  });
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);
