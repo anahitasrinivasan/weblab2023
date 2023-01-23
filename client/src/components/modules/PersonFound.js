@@ -51,7 +51,11 @@ const PersonFound = (props) => {
   };
 
   const unrequest = () => {
-    //unrequest a user
+    console.log("unrequesting :(");
+    post("/api/unrequest", { unrequested: props.friend._id }).then((message) => {
+      console.log(message);
+      setFriendStatus("no relation");
+    });
   };
 
   const unfriend = () => {

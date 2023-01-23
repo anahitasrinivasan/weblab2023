@@ -105,6 +105,20 @@ router.post("/request", (req, res) => {
   res.send("friend request sent");
 });
 
+router.post("/unrequest", (req, res) => {
+  User.findOne({ _id: req.user._id }).then((undoer) => {
+    undoer.requestedByUser = undoer.requestedByUser.filter((user) => user !== req.body.unrequested);
+    undoer.save();
+  });
+
+  User.findOne({ _id: req.body.unrequested }).then((unrequested) => {
+    unrequested.userRequested = unrequested.userRequested.filter((user) => user !== req.user._id);
+    unrequested.save();
+  });
+
+  res.send("unrequested");
+});
+
 router.post("/friend", (req, res) => {
   //accept a friend request
   //newFriend is the new friend's ID
