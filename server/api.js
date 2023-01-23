@@ -128,6 +128,22 @@ router.post("/friend", (req, res) => {
   res.send("friend accepted");
 });
 
+router.post("/unfriend", (req, res) => {
+  User.findOne({ _id: req.user._id }).then((rejecter) => {
+    rejecter.friends = rejecter.friends.filter((user) => user !== req.body.rejected);
+    rejecter.userRequested = rejecter.userRequested.concat(req.body.rejected);
+    rejecter.save();
+  });
+
+  User.findOne({ _id: req.body.rejected }).then((rejected) => {
+    rejected.friends = rejected.friends.filter((user) => user !== req.user._id);
+    rejected.requestedByUser = rejected.requestedByUser.concat(req.user._id);
+    rejected.save();
+  });
+
+  res.send("unfriended");
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);

@@ -55,7 +55,11 @@ const PersonFound = (props) => {
   };
 
   const unfriend = () => {
-    //unfriend someone
+    console.log("unfriending :/");
+    post("/api/unfriend", { rejected: props.friend._id }).then((message) => {
+      console.log(message);
+      setFriendStatus("this user has requested you as a friend");
+    });
   };
 
   const findFriendingButton = (friendStatus) => {
