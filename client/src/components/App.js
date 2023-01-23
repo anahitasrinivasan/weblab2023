@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./modules/NavBar.js";
-import { Router } from "@reach/router";
+import { Router, navigate } from "@reach/router";
 import jwt_decode from "jwt-decode";
 
 import NotFound from "./pages/NotFound.js";
@@ -45,6 +45,7 @@ const App = () => {
   const handleLogout = () => {
     setUserId(undefined);
     post("/api/logout");
+    navigate("/");
   };
 
   return (
