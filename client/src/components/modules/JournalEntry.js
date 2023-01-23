@@ -10,7 +10,7 @@ const JournalEntry = (props) => {
     const [moodValue, setMoodValue] = useState();
 
     //TO BE REMOVED: simply prints entry values underneath as a test
-    const [textValue, setTextValue] = useState("");
+    const [textValue, setTextValue] = useState("scroll back here to check the status of your submission");
     
     // called whenever the user types in the journal entry box
     const handleEntryChange = (event) => {
@@ -36,20 +36,28 @@ const JournalEntry = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const body = {
-            content: entryValue,
-            mood: moodValue,
-            sleep: sleepValue,
-            water: hydrationValue, 
-        };
-        post("/api/journal", body).then((story) => {
-            // display "done" for now to show that we finished successfully
-            setTextValue("done");
-        });
+        if((entryValue === "") || (!moodValue) || (!sleepValue) || (!hydrationValue)) {
+            setTextValue("please fill out all entries before submitting.");
+        }
+
+        else {
+            const body = {
+                content: entryValue,
+                mood: moodValue,
+                sleep: sleepValue,
+                water: hydrationValue, 
+            };
+            post("/api/journal", body).then((story) => {
+                // display "done" for now to show that we finished successfully
+                setTextValue("successfully submitted entry!");
+            });
+        }
     }
 
     return (
         <div>
+            <h1>{textValue}</h1>
+            <div className="form-text">recap your day.</div>
             <div className="JournalEntry-input">
                 <textarea
                     type="text"
@@ -59,6 +67,7 @@ const JournalEntry = (props) => {
                     onChange={handleEntryChange}
                 />
             </div>
+            <div className="form-text">how many hours did you sleep last night?</div>
             <div className="JournalEntry-input">
                 <input 
                     type="number"
@@ -68,6 +77,7 @@ const JournalEntry = (props) => {
                     onChange={handleSleepChange}
                 />
             </div>
+            <div className="form-text">how many ounces of water have you drunk today?</div>
             <div className="JournalEntry-input">
                 <input 
                     type="number"
@@ -77,15 +87,30 @@ const JournalEntry = (props) => {
                     onChange={handleHydrationChange}
                 />
             </div>
+            <div className="form-text">rank your mood from 1 to 5.</div>
             <div className="JournalEntry-input">
-                <select onChange={handleMoodChange} className="JournalEntry-select">
-                    <option value="" disabled selected>select mood from 1-5</option>
-                    <option value={1}>1</option>
-                    <option value={2}>2</option>
-                    <option value={3}>3</option>
-                    <option value={4}>4</option>
-                    <option value={5}>5</option>
-                </select>
+                <label>
+                    <input type="radio" name="moods" onChange={handleMoodChange} value={1} />
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927551.png" className="cry"></img>
+                </label>
+                <label>
+                    <input type="radio" name="moods" onChange={handleMoodChange} value={2} />
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927561.png" className="sad"></img>
+                </label>
+                <label>
+                    <input type="radio" name="moods" onChange={handleMoodChange} value={3} />
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927557.png" className="mid"></img>
+                </label>
+                <label>
+                    <input type="radio" name="moods" onChange={handleMoodChange} value={4} />
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927566.png" className="happy"></img>
+                </label>
+                <label>
+                    <input type="radio" name="moods" onChange={handleMoodChange} value={5} />
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927554.png" className="thrilled"></img>
+                </label>
+
+                
             </div>
             <div className="JournalEntry-input">
                 <button
@@ -96,7 +121,14 @@ const JournalEntry = (props) => {
                     submit
                 </button>
             </div>
-            <h1>{textValue}</h1>
+            <p>
+                emoji images from:
+            </p>
+            <p><a href="https://www.flaticon.com/free-icons/sad-face" title="sad face icons">Sad face icons created by th studio - Flaticon</a></p>
+            <p><a href="https://www.flaticon.com/free-icons/sad" title="sad icons">Sad icons created by Vitaly Gorbachev - Flaticon</a></p>
+            <p><a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">Emoji icons created by Vitaly Gorbachev - Flaticon</a></p>
+            <p><a href="https://www.flaticon.com/free-icons/smile" title="smile icons">Smile icons created by Vitaly Gorbachev - Flaticon</a></p>
+            <p><a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">Emoji icons created by Vitaly Gorbachev - Flaticon</a></p>
         </div>
     );
 };
