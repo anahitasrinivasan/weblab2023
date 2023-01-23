@@ -36,13 +36,18 @@ const PersonFound = (props) => {
 
   const requestFriend = () => {
     console.log("requested friend");
-    post("/api/request", { requesting: props.friend._id }).then(() => {
+    post("/api/request", { requesting: props.friend._id }).then((message) => {
       setFriendStatus("you've requested this user as a friend");
+      console.log(message);
     });
   };
 
   const acceptRequest = () => {
-    //accept a friend request
+    console.log("accepting request");
+    post("/api/friend", { newFriend: props.friend._id }).then((message) => {
+      console.log(message);
+      setFriendStatus("friends");
+    });
   };
 
   const unrequest = () => {

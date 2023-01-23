@@ -101,6 +101,29 @@ router.post("/request", (req, res) => {
     requestee.userRequested = requestee.userRequested.concat(req.user._id);
     requestee.save();
   });
+
+  res.send("friend request sent");
+});
+
+router.post("/friend", (req, res) => {
+  //accept a friend request
+  //newFriend is the new friend's ID
+
+  //change the accepter's status
+  User.findOne({ _id: req.user._id }).then((accepter) => {
+    accepter.friends = accepter.friends.concat(req.body.newFriend);
+    accepter.userRequested = accepter.userRequested.filter((user) => user !== req.body.newFriend);
+    accepter.save();
+  });
+
+  //change the acceptee's status
+  User.findOne({ _id: req.body.newFriend }).then((acceptee) => {
+    acceptee.friends = acceptee.friends.concat(req.user._id);
+    acceptee.requestedByUser = acceptee.requestedByUser.filter((user) => user !== req.user._id);
+    acceptee.save();
+  });
+
+  res.send("friend accepted");
 });
 
 // anything else falls to this "not found" case
