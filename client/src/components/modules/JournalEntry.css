@@ -87,7 +87,7 @@ h1 {
   outline: 2px solid var(--green);
 }
 
-img {
+.emotion {
   width: 7%;
   height: auto;
   border-radius: 50%;

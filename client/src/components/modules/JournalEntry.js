@@ -91,23 +91,23 @@ const JournalEntry = (props) => {
             <div className="JournalEntry-input">
                 <label>
                     <input type="radio" name="moods" onChange={handleMoodChange} value={1} />
-                    <img src="https://cdn-icons-png.flaticon.com/512/927/927551.png" className="cry"></img>
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927551.png" className="cry emotion"></img>
                 </label>
                 <label>
                     <input type="radio" name="moods" onChange={handleMoodChange} value={2} />
-                    <img src="https://cdn-icons-png.flaticon.com/512/927/927561.png" className="sad"></img>
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927561.png" className="sad emotion"></img>
                 </label>
                 <label>
                     <input type="radio" name="moods" onChange={handleMoodChange} value={3} />
-                    <img src="https://cdn-icons-png.flaticon.com/512/927/927557.png" className="mid"></img>
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927557.png" className="mid emotion"></img>
                 </label>
                 <label>
                     <input type="radio" name="moods" onChange={handleMoodChange} value={4} />
-                    <img src="https://cdn-icons-png.flaticon.com/512/927/927566.png" className="happy"></img>
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927566.png" className="happy emotion"></img>
                 </label>
                 <label>
                     <input type="radio" name="moods" onChange={handleMoodChange} value={5} />
-                    <img src="https://cdn-icons-png.flaticon.com/512/927/927554.png" className="thrilled"></img>
+                    <img src="https://cdn-icons-png.flaticon.com/512/927/927554.png" className="thrilled emotion"></img>
                 </label>
 
                 
