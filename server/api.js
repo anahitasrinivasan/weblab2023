@@ -163,18 +163,18 @@ router.post("/unfriend", (req, res) => {
 });
 
 router.get("/friends", (req, res) => {
-  User.findOne({ idNum: req.body.userNumId }).then((user) => {
+  User.findOne({ idNum: req.query.userNumId }).then((user) => {
     const friends = user.friends;
-    // res.send(friends);
+    res.send(friends);
 
-    const friendsList = friends.map((friend) => {
-      // res.send(friend);
-      User.findOne({ idNum: friend }).then((friendObject) => {
-        // res.send(friendObject);
-        return friendObject;
-      });
-    });
-    res.send(friendsList);
+    // const friendsList = friends.map((friend) => {
+    //   // res.send(friend);
+    //   User.findOne({ idNum: friend }).then((friendObject) => {
+    //     // res.send(friendObject);
+    //     return friendObject;
+    //   });
+    // });
+    // res.send(friendsList);
   });
   // res.send("recieved");
 });

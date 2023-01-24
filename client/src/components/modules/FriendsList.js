@@ -4,11 +4,11 @@ import { get } from "../../utilities";
 const FriendsList = (props) => {
   const [friends, setFriends] = useState([]);
 
-  //   useEffect(() => {
-  //     get("/api/friends", { user: props.userId }).then((friendsList) => {
-  //       setFriends(friendsList);
-  //     });
-  //   }, []);
+  useEffect(() => {
+    get("/api/friends", { userNumId: props.numId }).then((friendsList) => {
+      console.log(friendsList);
+    });
+  }, []);
 
   //   let friendsList = null;
   //   if (friends.length === 0) {
@@ -17,7 +17,7 @@ const FriendsList = (props) => {
   //     //map these all to friend objects
   //     friendsList = friends;
   //   }
-  return <div>Hello</div>;
+  return <div>Hi</div>;
 };
 
 export default FriendsList;
