@@ -22,11 +22,11 @@ const PersonFound = (props) => {
     } else {
       get("/api/friendInfo", { _id: props.friend["_id"] }).then((friendInfo) => {
         console.log(friendInfo["friends"]);
-        if (friendInfo["friends"].includes(props.userId)) {
+        if (friendInfo["friends"].includes(props.numId)) {
           setFriendStatus("friends");
-        } else if (friendInfo.userRequested.includes(props.userId)) {
+        } else if (friendInfo.userRequested.includes(props.numId)) {
           setFriendStatus("you've requested this user as a friend");
-        } else if (friendInfo.requestedByUser.includes(props.userId)) {
+        } else if (friendInfo.requestedByUser.includes(props.numId)) {
           setFriendStatus("this user has requested you as a friend");
         } else {
           console.log("no relation");
@@ -94,8 +94,9 @@ const PersonFound = (props) => {
   };
 
   const requestFriend = () => {
-    console.log("requested friend");
-    post("/api/request", { requesting: props.friend._id }).then(() => {
+    console.log(props.numId);
+    const body = { requesting: props.friend.idNum, userNumId: props.numId };
+    post("/api/request", body).then(() => {
       // setFriendStatus("you've requested this user as a friend");
       // setFriendButton(findFriendingButton(friendStatus));
     });
@@ -103,7 +104,7 @@ const PersonFound = (props) => {
 
   const acceptRequest = () => {
     console.log("accepting request");
-    post("/api/friend", { newFriend: props.friend._id }).then(() => {
+    post("/api/friend", { newFriend: props.friend.idNum, userNumId: props.numId }).then(() => {
       // setFriendStatus("friends");
       // setFriendButton(findFriendingButton(friendStatus));
     });
@@ -111,7 +112,7 @@ const PersonFound = (props) => {
 
   const unrequest = () => {
     console.log("unrequesting :(");
-    post("/api/unrequest", { unrequested: props.friend._id }).then(() => {
+    post("/api/unrequest", { unrequested: props.friend.idNum, userNumId: props.numId }).then(() => {
       // setFriendStatus("no relation");
       // setFriendButton(findFriendingButton(friendStatus));
     });
@@ -119,7 +120,7 @@ const PersonFound = (props) => {
 
   const unfriend = () => {
     console.log("unfriending :/");
-    post("/api/unfriend", { rejected: props.friend._id }).then(() => {
+    post("/api/unfriend", { rejected: props.friend.idNum, userNumId: props.numId }).then(() => {
       // setFriendStatus("this user has requested you as a friend");
       // setFriendButton(findFriendingButton(friendStatus));
     });

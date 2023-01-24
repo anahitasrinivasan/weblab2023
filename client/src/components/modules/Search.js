@@ -12,7 +12,14 @@ const Search = (props) => {
 
     get("/api/users", { search: value }).then((users) => {
       const userNames = users.map((user) => {
-        return <PersonFound name={user["name"]} friend={user} userId={props.userId} />;
+        return (
+          <PersonFound
+            name={user["name"]}
+            friend={user}
+            userId={props.userId}
+            numId={props.numId}
+          />
+        );
         //return user["name"];
       });
       console.log(userNames);

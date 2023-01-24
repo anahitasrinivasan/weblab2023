@@ -7,8 +7,8 @@ import FriendsList from "../modules/FriendsList.js";
 const Friends = (props) => {
   return (
     <div>
-      <Search userId={props.userId} />
-      <FriendsList />
+      <Search userId={props.userId} numId={props.numId} />
+      <FriendsList userId={props.userId} numId={props.numId} />
     </div>
   );
 };
