@@ -87,6 +87,95 @@ router.get("/users", (req, res) => {
   User.find({ name: req.query.search }).then((users) => res.send(users));
 });
 
+router.post("/request", (req, res) => {
+  //send a friend request
+  // const requester=req.user._id
+  // const requestee=req.body.requesting
+
+  User.findOne({ idNum: req.body.userNumId }).then((requester) => {
+    requester.requestedByUser = requester.requestedByUser.concat(req.body.requesting);
+    requester.save();
+  });
+
+  User.findOne({ idNum: req.body.requesting }).then((requestee) => {
+    requestee.userRequested = requestee.userRequested.concat(req.body.userNumId);
+    requestee.save();
+  });
+
+  // res.send("friend request sent");
+});
+
+router.post("/unrequest", (req, res) => {
+  User.findOne({ idNum: req.body.userNumId }).then((undoer) => {
+    undoer.requestedByUser = undoer.requestedByUser.filter((user) => user !== req.body.unrequested);
+    undoer.save();
+  });
+
+  User.findOne({ idNum: req.body.unrequested }).then((unrequested) => {
+    unrequested.userRequested = unrequested.userRequested.filter(
+      (user) => user !== req.body.userNumId
+    );
+    unrequested.save();
+  });
+
+  // res.send("unrequested");
+});
+
+router.post("/friend", (req, res) => {
+  //accept a friend request
+  //newFriend is the new friend's ID
+
+  console.log("recieved request");
+
+  //change the accepter's status
+  User.findOne({ idNum: req.body.userNumId }).then((accepter) => {
+    accepter.friends = accepter.friends.concat(req.body.newFriend);
+    accepter.userRequested = accepter.userRequested.filter((user) => user !== req.body.newFriend);
+    accepter.save();
+  });
+
+  //change the acceptee's status
+  User.findOne({ idNum: req.body.newFriend }).then((acceptee) => {
+    acceptee.friends = acceptee.friends.concat(req.body.userNumId);
+    acceptee.requestedByUser = acceptee.requestedByUser.filter(
+      (user) => user !== req.body.userNumId
+    );
+    acceptee.save();
+  });
+
+  // res.send("friend accepted");
+});
+
+router.post("/unfriend", (req, res) => {
+  User.findOne({ idNum: req.body.userNumId }).then((rejecter) => {
+    rejecter.friends = rejecter.friends.filter((user) => user !== req.body.rejected);
+    rejecter.userRequested = rejecter.userRequested.concat(req.body.rejected);
+    rejecter.save();
+  });
+
+  User.findOne({ idNum: req.body.rejected }).then((rejected) => {
+    rejected.friends = rejected.friends.filter((user) => user !== req.body.userNumId);
+    rejected.requestedByUser = rejected.requestedByUser.concat(req.body.userNumId);
+    rejected.save();
+  });
+
+  // res.send("unfriended");
+});
+
+router.get("/friends", (req, res) => {
+  User.findOne({ idNum: req.query.userNumId }).then((user) => {
+    const friends = user.friends;
+    res.send(friends);
+  });
+  // res.send("recieved");
+});
+
+router.get("/userFromNumId", (req, res) => {
+  User.findOne({ idNum: req.query.IdNum }).then((user) => {
+    res.send(user);
+  });
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);

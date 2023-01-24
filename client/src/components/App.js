@@ -21,6 +21,7 @@ import { get, post } from "../utilities";
  */
 const App = () => {
   const [userId, setUserId] = useState(undefined);
+  const [numId, setNumId] = useState(undefined);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -28,6 +29,8 @@ const App = () => {
         // they are registed in the database, and currently logged in.
         setUserId(user._id);
         console.log(user._id);
+        setNumId(user.idNum);
+        console.log(user.idNum);
       }
     });
   }, []);
@@ -38,6 +41,7 @@ const App = () => {
     console.log(`Logged in as ${decodedCredential.name}`);
     post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
+      setNumId(user.idNum);
       post("/api/initsocket", { socketid: socket.id });
     });
   };
@@ -56,7 +60,7 @@ const App = () => {
           <Home path="/" />
           <Journal path="/journal/:userId" />
           <Profile path="/profile/:userId" />
-          <Friends path="/friends/:userId" userId={userId} />
+          <Friends path="/friends/:userId" userId={userId} numId={numId} />
           <NotFound default />
         </Router>
       </div>

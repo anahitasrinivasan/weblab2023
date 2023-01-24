@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { get } from "../../utilities";
 import PersonFound from "./PersonFound.js";
+import "./Search.css";
 
 const Search = (props) => {
   const [value, setValue] = useState("");
@@ -11,7 +12,14 @@ const Search = (props) => {
 
     get("/api/users", { search: value }).then((users) => {
       const userNames = users.map((user) => {
-        return <PersonFound name={user["name"]} friend={user} userId={props.userId} />;
+        return (
+          <PersonFound
+            name={user["name"]}
+            friend={user}
+            userId={props.userId}
+            numId={props.numId}
+          />
+        );
         //return user["name"];
       });
       console.log(userNames);
@@ -34,9 +42,15 @@ const Search = (props) => {
 
   return (
     <div>
-      <input type="text" placeholder="type something" value={value} onChange={handleChange} />
-      <button type="submit" value="Submit" onClick={handleSubmit}>
-        Submit
+      <input
+        type="text"
+        placeholder="type something"
+        value={value}
+        onChange={handleChange}
+        className="Search-input"
+      />
+      <button type="submit" value="Search" onClick={handleSubmit} className="Search-submit">
+        Search
       </button>
       <div>{usersFound}</div>
     </div>
