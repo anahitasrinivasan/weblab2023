@@ -166,17 +166,14 @@ router.get("/friends", (req, res) => {
   User.findOne({ idNum: req.query.userNumId }).then((user) => {
     const friends = user.friends;
     res.send(friends);
-
-    // const friendsList = friends.map((friend) => {
-    //   // res.send(friend);
-    //   User.findOne({ idNum: friend }).then((friendObject) => {
-    //     // res.send(friendObject);
-    //     return friendObject;
-    //   });
-    // });
-    // res.send(friendsList);
   });
   // res.send("recieved");
+});
+
+router.get("/userFromNumId", (req, res) => {
+  User.findOne({ idNum: req.query.IdNum }).then((user) => {
+    res.send(user);
+  });
 });
 
 // anything else falls to this "not found" case

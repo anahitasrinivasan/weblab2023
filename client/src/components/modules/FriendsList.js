@@ -5,7 +5,14 @@ const FriendsList = (props) => {
   const [friends, setFriends] = useState([]);
 
   useEffect(() => {
-    get("/api/friends", { userNumId: props.numId }).then((friendsList) => {
+    let friendsList = [];
+    get("/api/friends", { userNumId: props.numId }).then((idsList) => {
+      console.log(idsList);
+      friendsList = idsList.map((idNum) => {
+        get("/api/userFromNumId", { IdNum: idNum }).then((friend) => {
+          console.log(friend);
+        });
+      });
       console.log(friendsList);
     });
   }, []);
