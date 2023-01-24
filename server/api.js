@@ -136,7 +136,7 @@ router.post("/friend", (req, res) => {
 
   //change the acceptee's status
   User.findOne({ idNum: req.body.newFriend }).then((acceptee) => {
-    acceptee.friends = acceptee.friends.concat(req.user._id);
+    acceptee.friends = acceptee.friends.concat(req.body.userNumId);
     acceptee.requestedByUser = acceptee.requestedByUser.filter(
       (user) => user !== req.body.userNumId
     );
