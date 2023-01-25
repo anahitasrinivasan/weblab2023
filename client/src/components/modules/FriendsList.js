@@ -1,37 +1,44 @@
 import React, { useState, useEffect } from "react";
 import { get } from "../../utilities";
 
+import "./FriendsList.css";
+
 const FriendsList = (props) => {
-  const [friends, setFriends] = useState([]);
+  const [friendsDisplay, setFriendsDisplay] = useState([]);
 
   useEffect(() => {
-    let friendsList = [];
-    if (typeof props.numId == "undefined") {
-      return "not logged in";
+    if((typeof props.numId) === "undefined") {
+      console.log("not logged in")
     }
-    get("/api/friends", { userNumId: props.numId }).then((idsList) => {
-      console.log(idsList);
-      let friendInfo = "hi";
-      friendsList = idsList.map((idNum) => {
-        get("/api/userFromNumId", { IdNum: idNum }).then((friend) => {
-          console.log(friend);
-          friendInfo = friend;
-          console.log(friendInfo);
-        });
-        return friendInfo;
+    else {
+      get("/api/friends", {userNumId: props.numId}).then((idsList) => {
+        getNames(idsList);
       });
-      console.log(friendsList);
-    });
-  }, []);
+    }
+  }, [props.numId]);
 
-  //   let friendsList = null;
-  //   if (friends.length === 0) {
-  //     friendsList = "Search for people you know to make friends!";
-  //   } else {
-  //     //map these all to friend objects
-  //     friendsList = friends;
-  //   }
-  return <div>Hi</div>;
+
+  const getNames = async (idsList) => {
+    const res = await Promise.all(
+      idsList.map((id) => (get("/api/userFromNumId", {IdNum: id})))
+    );
+    console.log(res);
+    setFriendsDisplay(res.map((friend) => (
+      <div className="Friend-container">
+        <div><b>name: </b>{friend.name}</div>
+        <div><b>friend ID: </b>{friend.idNum}</div>
+      </div>
+    )));
+    console.log(friendsDisplay);
+  }
+
+
+  return (
+    <div>
+      <div className="Friend-header">your friends: </div>
+      <div>{friendsDisplay}</div>
+    </div>
+  );
 };
 
 export default FriendsList;

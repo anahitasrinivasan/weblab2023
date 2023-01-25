@@ -169,13 +169,18 @@ router.post("/unfriend", (req, res) => {
 });
 
 router.get("/friends", (req, res) => {
-  if (typeof req.query.userNumId == "undefined") {
-    res.send("not logged in");
+
+  if((typeof req.query.userNumId) === "undefined") {
+    console.log("sorry bby gorl")
+    res.send("sorry bby gorl")
   }
-  User.findOne({ idNum: req.query.userNumId }).then((user) => {
-    const friends = user.friends;
-    res.send(friends);
-  });
+  else {
+    User.findOne({ idNum: req.query.userNumId }).then((user) => {
+      const friends = user.friends;
+      res.send(friends);
+    });
+  }
+
   // res.send("recieved");
 });
 

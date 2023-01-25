@@ -44,7 +44,7 @@ const Search = (props) => {
     <div>
       <input
         type="text"
-        placeholder="type something"
+        placeholder="search for friends"
         value={value}
         onChange={handleChange}
         className="Search-input"
