@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { get, post } from "../../utilities";
 import "./PersonFound.css";
+import { Link } from "@reach/router";
+import FriendEntries from "../pages/FriendEntries.js";
 
 import FriendStatus from "./FriendStatus.js";
+// import { Link } from "react-router-dom";
 
 const PersonFound = (props) => {
   /**
@@ -14,6 +17,7 @@ const PersonFound = (props) => {
 
   const [friendStatus, setFriendStatus] = useState("no relationship");
   const [friendButton, setFriendButton] = useState("loading");
+  const [viewButton, setViewButton] = useState(" ");
 
   const findFriendStatus = () => {
     console.log("finding friend status");
@@ -24,20 +28,31 @@ const PersonFound = (props) => {
         console.log(friendInfo["friends"]);
         if (friendInfo["friends"].includes(props.numId)) {
           setFriendStatus("friends");
-
         } else if (friendInfo.userRequested.includes(props.numId)) {
           setFriendStatus("you've requested this user as a friend");
         } else if (friendInfo.requestedByUser.includes(props.numId)) {
           setFriendStatus("this user has requested you as a friend");
-
-        
-          
-
         } else {
           console.log("no relation");
           setFriendStatus("no relation");
         }
       });
+    }
+  };
+
+  const findViewButton = () => {
+    if (friendStatus === "friends") {
+      return (
+        <span>
+          {/* // <Link className="FriendingButton" to={"/friends/entries/${userId}"}> */}
+          <Link to={`/friends/entries/${props.friend.idNum}`} className="FriendingButton">
+            View Entries{" "}
+          </Link>
+          {/* // <button className="FriendingButton"> View Entries</button> */}
+        </span>
+      );
+    } else {
+      return null;
     }
   };
 
@@ -136,6 +151,11 @@ const PersonFound = (props) => {
   }, [friendStatus]);
 
   useEffect(() => {
+    console.log("chaning view button");
+    setViewButton(findViewButton());
+  }, [friendButton]);
+
+  useEffect(() => {
     findFriendStatus();
     console.log("finding friend status in useeffect");
   }, [props.name]);
@@ -145,6 +165,7 @@ const PersonFound = (props) => {
       <span>{props.name} </span>
       <FriendStatus friendStatus={friendStatus} />
       {friendButton}
+      {viewButton}
       <span className="u-rightAdjust"> Friending Id: {props.friend.idNum}</span>
     </div>
   );

@@ -163,6 +163,9 @@ router.post("/unfriend", (req, res) => {
 });
 
 router.get("/friends", (req, res) => {
+  if (typeof req.query.userNumId == "undefined") {
+    res.send("not logged in");
+  }
   User.findOne({ idNum: req.query.userNumId }).then((user) => {
     const friends = user.friends;
     res.send(friends);

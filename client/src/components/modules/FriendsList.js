@@ -4,18 +4,25 @@ import { get } from "../../utilities";
 const FriendsList = (props) => {
   const [friends, setFriends] = useState([]);
 
-  //   useEffect(() => {
-  //     let friendsList = [];
-  //     get("/api/friends", { userNumId: props.numId }).then((idsList) => {
-  //       console.log(idsList);
-  //       friendsList = idsList.map((idNum) => {
-  //         get("/api/userFromNumId", { IdNum: idNum }).then((friend) => {
-  //           console.log(friend);
-  //         });
-  //       });
-  //       console.log(friendsList);
-  //     });
-  //   }, []);
+  useEffect(() => {
+    let friendsList = [];
+    if (typeof props.numId == "undefined") {
+      return "not logged in";
+    }
+    get("/api/friends", { userNumId: props.numId }).then((idsList) => {
+      console.log(idsList);
+      let friendInfo = "hi";
+      friendsList = idsList.map((idNum) => {
+        get("/api/userFromNumId", { IdNum: idNum }).then((friend) => {
+          console.log(friend);
+          friendInfo = friend;
+          console.log(friendInfo);
+        });
+        return friendInfo;
+      });
+      console.log(friendsList);
+    });
+  }, []);
 
   //   let friendsList = null;
   //   if (friends.length === 0) {
