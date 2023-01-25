@@ -60,7 +60,7 @@ const App = () => {
           <Home path="/" />
           <Journal path="/journal/:userId" />
           <Profile path="/profile/:userId" />
-          {/* <Friends path="/friends/:userId" userId={userId} numId={numId} /> */}
+          <Friends path="/friends/:userId" userId={userId} numId={numId} />
           <NotFound default />
         </Router>
       </div>
