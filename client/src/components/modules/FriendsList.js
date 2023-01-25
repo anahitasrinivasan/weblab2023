@@ -7,12 +7,17 @@ const FriendsList = (props) => {
   const [friends, setFriends] = useState([]);
 
   useEffect(() => {
-    get("/api/friends", {userNumId: props.numId}).then((idsList) => {
-      setFriends(idsList.map((id) => 
-        (<div className="Friend-container" id={id} onClick={handleClick}>{id}</div>))
-      );
-    });
-  }, []);
+    if((typeof props.numId) === "undefined") {
+      console.log("slayyyy")
+    }
+    else {
+      get("/api/friends", {userNumId: props.numId}).then((idsList) => {
+        setFriends(idsList.map((id) => 
+          (<div className="Friend-container" id={id} onClick={handleClick}>{id}</div>))
+        );
+      });
+    }
+  }, [props.numId]);
 
   const handleClick = (event) => {
     const idValue = event.target.id;
