@@ -4,14 +4,14 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid var(--green);
+    border: 1px solid var(--purple);
     border-radius: 2rem;
     padding-left: 0px;
-    background-color: var(--honeydew);
+    background-color: var(--white);
 }
 
 ul li {
-    color: var(--green);
+    color: var(--purple);
     width: 50%;
     padding: 1rem;
     list-style: none;
@@ -31,10 +31,10 @@ ul li:last-child {
 }
    
 ul li:hover {
-    background: rgba(60, 136, 126, 0.2);
+    background: rgba(136, 96, 208, 0.2);
 }
    
 ul li.active {
-    background: var(--green);
-    color: var(--honeydew);
+    background: var(--purple);
+    color: var(--white);
 }

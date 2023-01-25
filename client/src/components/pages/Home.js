@@ -7,11 +7,11 @@ const Home = (props) => {
         <div className="flex-container">
             <div className="flex-item">
                 <div className="img-div">
-                <img src="https://images.unsplash.com/photo-1525923838299-2312b60f6d69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2322&q=80" alt="happy plant!"></img>
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616516.png" alt="happy plant!"></img>
                 </div>
-                <a href="https://unsplash.com/photos/jt6QxZwSOCQ" title="nature icons"
+                <a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons"
                 className="image-link u-link">
-                    unsplash
+                    Cloud icons created by Freepik - Flaticon
                 </a>
             </div>
             <div className="flex-item">

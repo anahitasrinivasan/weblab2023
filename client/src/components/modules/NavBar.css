@@ -1,6 +1,6 @@
 .NavBar-container {
     padding: var(--s) var(--m);
-    background-color: var(--green);
+    background-color: var(--royal-blue);
     position: fixed; 
     top: 0; 
     width: 100%;
@@ -8,7 +8,7 @@
   
   .NavBar-title {
     color: var(--white);
-    font-size: 20px;
+    font-size: 30px;
   }
   
   .NavBar-linkContainer {
@@ -17,7 +17,7 @@
   
   .NavBar-link,
   .NavBar-link:visited {
-    color: var(--honeydew);
+    color: var(--light-purple);
     text-decoration: none;
   }
   
@@ -26,14 +26,14 @@
   }
   
   .NavBar-login {
-    background-color: var(--honeydew);
-    color: var(--green);
+    background-color: var(--white);
+    color: var(--royal-blue);
     margin-left: var(--m);
     text-decoration: none;
     font-family: "Roboto";
     font-size: 16px;
     border-radius: var(--s);
-    border-color: var(--green);
+    border-color: var(--royal-blue);
     border-style: solid;
     padding: 0.3rem;
     text-align: center;
@@ -41,8 +41,8 @@
   }
 
   .NavBar-login:hover {
-    background-color: var(--green);
-    color: var(--honeydew);
+    background-color: var(--royal-blue);
+    color: var(--white);
   }
 
   .NavBar-link.NavBar-login {

@@ -27,7 +27,6 @@
     width: 40vw;
     height: 40vw;
     overflow: hidden;
-    border-radius: 50%;
 }
 
 img {
@@ -38,12 +37,12 @@ img {
 .text-header {
     padding: 10%;
     text-align: center;
-    color: var(--green);
+    color: var(--royal-blue);
     font-size: 40px;
 }
 
 .text {
     padding: 10%;
     text-align: center;
-    color: var(--green);
+    color: var(--royal-blue);
 }
