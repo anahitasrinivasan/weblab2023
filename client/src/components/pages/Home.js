@@ -7,7 +7,7 @@ const Home = (props) => {
         <div className="flex-container">
             <div className="flex-item">
                 <div className="img-div">
-                <img src="https://cdn-icons-png.flaticon.com/512/616/616516.png" alt="happy plant!"></img>
+                    <img src="https://cdn-icons-png.flaticon.com/512/616/616516.png" alt="cloud!"></img>
                 </div>
                 <a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons"
                 className="image-link u-link">

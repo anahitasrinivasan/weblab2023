@@ -10,7 +10,7 @@ const JournalEntry = (props) => {
     const [moodValue, setMoodValue] = useState();
 
     //TO BE REMOVED: simply prints entry values underneath as a test
-    const [textValue, setTextValue] = useState("scroll back here to check the status of your submission");
+    const [textValue, setTextValue] = useState("be sure to hit submit!");
     
     // called whenever the user types in the journal entry box
     const handleEntryChange = (event) => {
@@ -44,6 +44,10 @@ const JournalEntry = (props) => {
             setTextValue("please make sure your sleep and hydration values are not negative!");
         }
 
+        else if(sleepValue > 24) {
+            setTextValue("please make sure your sleep value is valid.");
+        }
+
         else {
             const body = {
                 content: entryValue,
@@ -54,13 +58,15 @@ const JournalEntry = (props) => {
             post("/api/journal", body).then((story) => {
                 // display "done" for now to show that we finished successfully
                 setTextValue("successfully submitted entry!");
+                setEntryValue("");
+                setSleepValue("");
+                setHydrationValue("");
             });
         }
     }
 
     return (
-        <div>
-            <h1>{textValue}</h1>
+        <div className="JournalEntry-wrapper">
             <div className="form-text">recap your day.</div>
             <div className="JournalEntry-input">
                 <textarea
@@ -81,7 +87,7 @@ const JournalEntry = (props) => {
                     onChange={handleSleepChange}
                 />
             </div>
-            <div className="form-text">how many ounces of water have you drunk today?</div>
+            <div className="form-text">how many ounces of water have you drank today?</div>
             <div className="JournalEntry-input">
                 <input 
                     type="number"
@@ -91,7 +97,7 @@ const JournalEntry = (props) => {
                     onChange={handleHydrationChange}
                 />
             </div>
-            <div className="form-text">rank your mood from 1 to 5.</div>
+            <div className="form-text">click on the image that most closely represents your mood.</div>
             <div className="JournalEntry-input">
                 <label>
                     <input type="radio" name="moods" onChange={handleMoodChange} value={1} />
@@ -125,6 +131,7 @@ const JournalEntry = (props) => {
                     submit
                 </button>
             </div>
+            <h1>{textValue}</h1>
             <p>
                 emoji images from:
             </p>

@@ -11,7 +11,7 @@
     order: 0;
     flex: 1 1 50%;
     align-self: auto;
-    }
+}
 
 .flex-item:nth-child(2) {
     order: 0;
@@ -27,6 +27,9 @@
     width: 40vw;
     height: 40vw;
     overflow: hidden;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 img {

@@ -1,3 +1,10 @@
+.JournalEntry-wrapper {
+  background-color: var(--grey);
+  padding: 5%;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+}
+
 .JournalEntry-input {
   font-size: 16px;
   padding: 1rem;
@@ -7,9 +14,9 @@
 .JournalEntry-button {
   font-family: "Roboto";
   font-size: 16px;
-  color: var(--honeydew);
-  background-color: var(--green);
-  border: var(--honeydew) 1px solid;
+  color: var(--white);
+  background-color: var(--royal-blue);
+  border: none;
   border-radius: var(--s);
   width: 30%;
   padding: 1rem;
@@ -20,8 +27,10 @@
 }
 
 .JournalEntry-button:hover {
-  color: var(--green);
-  background-color: var(--honeydew);
+  color: var(--royal-blue);
+  background-image: none;
+  background-color: white;
+  transition: all 0.7s;
 }
 
 .JournalEntry-content,
@@ -33,13 +42,13 @@
   border: none;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
   border-width: 1px;
-  background-color: var(--honeydew);
-  color: var(--green);
+  background-color: var(--white);
+  color: var(--royal-blue);
   text-align: center;
 }
 
 .JournalEntry-content {
-  width: 100%;
+  width: 80%;
   height: 100px;
   padding: 15px;
   text-align: left;
@@ -56,21 +65,23 @@
 }
 
 .form-text {
-  color: var(--green)
+  color: var(--royal-blue);
+  font-weight: bold;
 }
 
 h1 {
   font-size: 16px;
-  color: var(--honeydew);
+  color: var(--white);
   display: inline-block;
-  background-color: var(--green);
-  border: 1px solid var(--honeydew);
+  background-color: var(--royal-blue);
+  border: 1px solid var(--white);
   padding: 10px;
   border-radius: 10px;
+  text-align: center;
 }
 
 ::placeholder {
-  color: var(--green)
+  color: var(--royal-blue)
 }
 
 [type=radio] { 
@@ -84,7 +95,7 @@ h1 {
 }
 
 [type=radio]:checked + img {
-  outline: 2px solid var(--green);
+  outline: 2px solid var(--royal-blue);
 }
 
 .emotion {
@@ -95,10 +106,10 @@ h1 {
 
 p {
   font-size: 8px;
-  color: var(--beaver);
+  color: var(--purple);
 }
 p a {
-  color: var(--beaver);
+  color: var(--purple);
 }
 
 .cry {
