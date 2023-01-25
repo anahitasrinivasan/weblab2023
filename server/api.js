@@ -50,6 +50,12 @@ router.get("/journals", auth.ensureLoggedIn, (req, res) => {
   });
 });
 
+router.get("/friendEntries", (req, res) => {
+  Entry.find({ creator_id: req.query.id }).then((entries) => {
+    res.send(entries);
+  });
+});
+
 router.post("/journal", auth.ensureLoggedIn, (req, res) => {
   const newEntry = new Entry({
     creator_id: req.user._id,
