@@ -44,8 +44,8 @@ const Graph = (props) => {
             label: props.type,
             data: entriesList,
             fill: true,
-            backgroundColor: "rgba(161, 124, 107, 0.2)",
-            borderColor: "rgba(161, 124, 107, 1)"
+            backgroundColor: "rgba(136, 96, 208, 0.2)",
+            borderColor: "rgba(136, 96, 208, 1)"
           }
         ],
     };
