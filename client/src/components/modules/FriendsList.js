@@ -17,6 +17,7 @@ const FriendsList = (props) => {
     }
   }, [props.numId]);
 
+
   const getNames = async (idsList) => {
     const res = await Promise.all(
       idsList.map((id) => (get("/api/userFromNumId", {IdNum: id})))
@@ -30,6 +31,7 @@ const FriendsList = (props) => {
     )));
     console.log(friendsDisplay);
   }
+
 
   return (
     <div>
