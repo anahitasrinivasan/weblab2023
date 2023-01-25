@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { get, post } from "../../utilities";
 import Tab from "../modules/Tab.js";
 import Content from "../modules/Content.js";
+import "./FriendEntries.css";
 
 const FriendEntries = (props) => {
   const [friend, setFriend] = useState(undefined);
@@ -37,7 +38,7 @@ const FriendEntries = (props) => {
   const hasEntries = entries.length !== 0;
   if (hasEntries) {
     entriesList = entries.map((entry) => (
-      <div className="Profile-container">
+      <div className="FriendEntries-container">
         <div className="Profile-user">{entry.creator_name}</div>
         <div>
           <b>journal entry: </b>
@@ -46,7 +47,7 @@ const FriendEntries = (props) => {
       </div>
     ));
     moodList = entries.map((entry) => (
-      <div className="Profile-container">
+      <div className="FriendEntries-container">
         <div className="Profile-user">{entry.creator_name}</div>
         <div>
           <b>mood: </b>
@@ -55,7 +56,7 @@ const FriendEntries = (props) => {
       </div>
     ));
     sleepList = entries.map((entry) => (
-      <div className="Profile-container">
+      <div className="FriendEntries-container">
         <div className="Profile-user">{entry.creator_name}</div>
         <div>
           <b>sleep: </b>
@@ -64,7 +65,7 @@ const FriendEntries = (props) => {
       </div>
     ));
     waterList = entries.map((entry) => (
-      <div className="Profile-container">
+      <div className="FriendEntries-container">
         <div className="Profile-user">{entry.creator_name}</div>
         <div>
           <b>water: </b>
@@ -73,10 +74,10 @@ const FriendEntries = (props) => {
       </div>
     ));
   } else {
-    entriesList = <div className="Profile-container">No entries!</div>;
-    moodList = <div className="Profile-container">No entries!</div>;
-    sleepList = <div className="Profile-container">No entries!</div>;
-    waterList = <div className="Profile-container">No entries!</div>;
+    entriesList = <div className="FriendEntries-container">No entries!</div>;
+    moodList = <div className="FriendEntries-container">No entries!</div>;
+    sleepList = <div className="FriendEntries-container">No entries!</div>;
+    waterList = <div className="FriendEntries-container">No entries!</div>;
   }
 
   return (

@@ -1,0 +1,25 @@
+.FriendEntries-container {
+  color: var(--teal);
+  width: 100%;
+  padding: 1rem;
+  list-style: none;
+  cursor: pointer;
+  margin-top: var(--m);
+  border: 1px solid var(--teal);
+  border-radius: 1rem;
+  background-color: var(--light-purple);
+}
+
+.FriendEntries-container:hover {
+  background: var(--teal);
+  color: var(--light-purple);
+  transition: all 0.5s;
+}
+
+.FriendEntries-container:first-of-type {
+  margin-top: var(--l);
+}
+
+.FriendEntries-user {
+  font-weight: 1000;
+}
