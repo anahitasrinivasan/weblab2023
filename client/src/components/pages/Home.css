@@ -1,26 +1,110 @@
 .flex-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-content: center;
     align-items: center;
-    }
+}
 
 .flex-item:nth-child(1) {
     order: 0;
-    flex: 1 1 50%;
-    align-self: auto;
+    flex: 1 1 100%;
+    align-self: center;
+    width: 100%;
 }
 
 .flex-item:nth-child(2) {
     order: 0;
-    flex: 1 1 50%;
-    align-self: auto;
+    flex: 1 1 100%;
+    align-self: center;
+    width: 100%;
+}
+
+.flex-item:nth-child(3) {
+    order: 0;
+    flex: 1 1 100%;
+    align-self: center;
+    width: 100%;
+}
+
+.flex-item:nth-child(4) {
+    order: 0;
+    flex: 1 1 100%;
+    align-self: center;
+    width: 100%;
+}
+
+.inner-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+
+.description-item {
+    background-color: var(--white);
+    width: 100%;
+    padding: 5%;
+    margin: 2%;
+    border-radius: 15px;
+    text-align: center;
+    height: 20em;
+    transition: all 0.7s;
+}
+
+.description-item:hover {
+    background-color: var(--royal-blue);
+}
+
+.description-item:hover .description-item-header {
+    color: var(--white);
+}
+
+.description-item:hover .description-item-text {
+    color: var(--white);
+}
+
+.description-item-header {
+    color: var(--light-blue);
+    font-size: 4vw;
+    transition: all 0.7s;
+}
+
+.description-item-text {
+    color: var(--darkestgrey);
+    transition: all 0.7s;
 }
 
 .image-link {
     font-size: 8px;
+}
+
+.image-stack {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+}
+
+.image-item-1 {
+    grid-column: 2 / span 5;
+    grid-row: 1;
+    padding-top: 20%;
+}
+
+.image-item-2 {
+    grid-column: 4 / span 4;
+    grid-row: 1;
+    padding-top: 2%;
+}
+
+.image-item-3 {
+    grid-column: 6 / span 6;
+    grid-row: 1;
+    z-index: 1;
+    padding-top: 10%;
 }
 
 .img-div { 
@@ -38,10 +122,9 @@ img {
 }
 
 .text-header {
-    padding: 10%;
     text-align: center;
-    color: var(--royal-blue);
-    font-size: 40px;
+    color: var(--white);
+    font-size: 8vw;
 }
 
 .text {

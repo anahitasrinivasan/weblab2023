@@ -5,12 +5,12 @@ import { post } from "../../utilities";
 
 const JournalEntry = (props) => {
     const [entryValue, setEntryValue] = useState("");
-    const [sleepValue, setSleepValue] = useState();
-    const [hydrationValue, setHydrationValue] = useState();
+    const [sleepValue, setSleepValue] = useState(8);
+    const [hydrationValue, setHydrationValue] = useState(8);
     const [moodValue, setMoodValue] = useState();
 
     //TO BE REMOVED: simply prints entry values underneath as a test
-    const [textValue, setTextValue] = useState("be sure to hit submit!");
+    const [textValue, setTextValue] = useState("submit");
     
     // called whenever the user types in the journal entry box
     const handleEntryChange = (event) => {
@@ -37,15 +37,7 @@ const JournalEntry = (props) => {
         event.preventDefault();
 
         if((entryValue === "") || (!moodValue) || (!sleepValue) || (!hydrationValue)) {
-            setTextValue("please fill out all entries before submitting.");
-        }
-
-        else if((sleepValue < 0) || (hydrationValue < 0)) {
-            setTextValue("please make sure your sleep and hydration values are not negative!");
-        }
-
-        else if(sleepValue > 24) {
-            setTextValue("please make sure your sleep value is valid.");
+            setTextValue("please fill out all entries.");
         }
 
         else {
@@ -67,6 +59,8 @@ const JournalEntry = (props) => {
 
     return (
         <div className="JournalEntry-wrapper">
+            <div className="form-header">my journal</div>
+            <hr color="#c1c8e4"/>
             <div className="form-text">recap your day.</div>
             <div className="JournalEntry-input">
                 <textarea
@@ -75,27 +69,33 @@ const JournalEntry = (props) => {
                     placeholder={props.defaultEntryText}
                     value={entryValue}
                     onChange={handleEntryChange}
+                    maxLength="2000"
                 />
             </div>
             <div className="form-text">how many hours did you sleep last night?</div>
-            <div className="JournalEntry-input">
+            <div class="JournalEntry-input">
                 <input 
-                    type="number"
-                    className="JournalEntry-number"
-                    placeholder={props.defaultSleepText}
-                    value={sleepValue}
-                    onChange={handleSleepChange}
+                    type="range" 
+                    className="JournalEntry-slider"
+                    min="0" 
+                    max="24" 
+                    step="0.5"
+                    defaultValue="8" 
+                    onChange={handleSleepChange} 
                 />
+                <div className="rangeValue">{sleepValue}</div>
             </div>
-            <div className="form-text">how many ounces of water have you drank today?</div>
-            <div className="JournalEntry-input">
+            <div className="form-text">how many glasses of water have you drank today?</div>
+            <div class="JournalEntry-input">
                 <input 
-                    type="number"
-                    className="JournalEntry-number"
-                    placeholder={props.defaultHydrationText}
-                    value={hydrationValue}
-                    onChange={handleHydrationChange}
+                    type="range" 
+                    className="JournalEntry-slider"
+                    min="0" 
+                    max="20" 
+                    defaultValue="8" 
+                    onChange={handleHydrationChange} 
                 />
+                <div className="rangeValue">{hydrationValue}</div>
             </div>
             <div className="form-text">click on the image that most closely represents your mood.</div>
             <div className="JournalEntry-input">
@@ -128,18 +128,17 @@ const JournalEntry = (props) => {
                     value="Submit"
                     className="JournalEntry-button"
                     onClick={handleSubmit}>
-                    submit
+                    {textValue}
                 </button>
             </div>
-            <h1>{textValue}</h1>
-            <p>
+            {/* <p className="paragraph">
                 emoji images from:
             </p>
-            <p><a href="https://www.flaticon.com/free-icons/sad-face" title="sad face icons">Sad face icons created by th studio - Flaticon</a></p>
-            <p><a href="https://www.flaticon.com/free-icons/sad" title="sad icons">Sad icons created by Vitaly Gorbachev - Flaticon</a></p>
-            <p><a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">Emoji icons created by Vitaly Gorbachev - Flaticon</a></p>
-            <p><a href="https://www.flaticon.com/free-icons/smile" title="smile icons">Smile icons created by Vitaly Gorbachev - Flaticon</a></p>
-            <p><a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">Emoji icons created by Vitaly Gorbachev - Flaticon</a></p>
+            <p className="paragraph"><a href="https://www.flaticon.com/free-icons/sad-face" title="sad face icons">Sad face icons created by th studio - Flaticon</a></p>
+            <p className="paragraph"><a href="https://www.flaticon.com/free-icons/sad" title="sad icons">Sad icons created by Vitaly Gorbachev - Flaticon</a></p>
+            <p className="paragraph"><a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">Emoji icons created by Vitaly Gorbachev - Flaticon</a></p>
+            <p className="paragraph"><a href="https://www.flaticon.com/free-icons/smile" title="smile icons">Smile icons created by Vitaly Gorbachev - Flaticon</a></p>
+            <p className="paragraph"><a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">Emoji icons created by Vitaly Gorbachev - Flaticon</a></p> */}
         </div>
     );
 };
