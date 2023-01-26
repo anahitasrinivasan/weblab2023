@@ -3,6 +3,7 @@ import { get, post } from "../../utilities";
 import Tab from "../modules/Tab.js";
 import Content from "../modules/Content.js";
 import "./FriendEntries.css";
+import "../modules/Tab.css";
 
 const FriendEntries = (props) => {
   const [friend, setFriend] = useState(undefined);
@@ -83,7 +84,7 @@ const FriendEntries = (props) => {
   return (
     <div>
       <h2>You're looking at {name}'s entries</h2>
-      <ul>
+      <ul className="blue">
         <Tab id="entries" activeTab={activeTab} setActiveTab={setActiveTab} />
         <Tab id="moods" activeTab={activeTab} setActiveTab={setActiveTab} />
         <Tab id="sleep" activeTab={activeTab} setActiveTab={setActiveTab} />

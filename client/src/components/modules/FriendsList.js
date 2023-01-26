@@ -32,7 +32,7 @@ const FriendsList = (props) => {
             {friend.idNum}
           </div>
           <span>
-            <Link to={`/friends/entries/${friend.idNum}`} className="FriendingButton">
+            <Link to={`/friends/entries/${friend.idNum}`} className="ViewingButton">
               View Entries{" "}
             </Link>
           </span>

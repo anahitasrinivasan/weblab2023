@@ -1,40 +1,81 @@
-ul {
-    width: 100%;
-    margin: 0 auto 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid var(--purple);
-    border-radius: 2rem;
-    padding-left: 0px;
-    background-color: var(--white);
+.purple {
+  width: 100%;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--purple);
+  border-radius: 2rem;
+  padding-left: 0px;
+  background-color: var(--white);
 }
 
-ul li {
-    color: var(--purple);
-    width: 50%;
-    padding: 1rem;
-    list-style: none;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.7s;
+.purple li {
+  color: var(--purple);
+  width: 50%;
+  padding: 1rem;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.7s;
 }
 
-ul li:first-child {
-    border-bottom-left-radius: 2rem;
-    border-top-left-radius: 2rem;
+.purple li:first-child {
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
 }
-   
-ul li:last-child {
-    border-bottom-right-radius: 2rem;
-    border-top-right-radius: 2rem;
+
+.purple li:last-child {
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
 }
-   
-ul li:hover {
-    background: rgba(136, 96, 208, 0.2);
+
+.purple li:hover {
+  background: rgba(136, 96, 208, 0.2);
 }
-   
-ul li.active {
-    background: var(--purple);
-    color: var(--white);
+
+.purple li.active {
+  background: var(--purple);
+  color: var(--white);
+}
+
+.blue {
+  width: 100%;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--royal-blue);
+  border-radius: 2rem;
+  padding-left: 0px;
+  background-color: var(--white);
+}
+
+.blue li {
+  color: var(--royal-blue);
+  width: 50%;
+  padding: 1rem;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.7s;
+}
+
+.blue li:first-child {
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+
+.blue li:last-child {
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.blue li:hover {
+  background: var(--pale-blue);
+}
+
+.blue li.active {
+  background: var(--royal-blue);
+  color: var(--white);
 }

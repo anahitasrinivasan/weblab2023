@@ -1,15 +1,24 @@
+.Search-container {
+  color: var(--light-purple);
+}
+
 .Search-input {
   font-size: 16px;
   padding: 0.25rem;
   text-align: left;
+  color: black;
+}
+
+input::placeholder {
+  color: var(--light-purple);
 }
 
 .Search-submit {
   font-family: "Roboto";
   font-size: 16px;
-  color: var(--honeydew);
-  background-color: var(--green);
-  border: var(--honeydew) 1px solid;
+  color: var(--white);
+  background-color: var(--purple);
+  border: var(--purple) 1px solid;
   border-radius: var(--s);
 
   padding: 0.25rem;

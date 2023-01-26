@@ -41,12 +41,12 @@ const Search = (props) => {
   };
 
   return (
-    <div>
+    <div className="Search-container">
       <input
         type="text"
-        placeholder="search for friends"
         value={value}
         onChange={handleChange}
+        placeholder="don't be green"
         className="Search-input"
       />
       <button type="submit" value="Search" onClick={handleSubmit} className="Search-submit">

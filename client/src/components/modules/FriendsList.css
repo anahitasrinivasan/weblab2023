@@ -1,23 +1,53 @@
 .Friend-header {
-    color: var(--honeydew);
-    width: 100%;
-    padding: 1rem;
-    list-style: none;
-    cursor: pointer;
-    margin-top: var(--m);
-    border: 1px solid var(--honeydew);
-    border-radius: 1rem;
-    background-color: var(--green);
+  color: var(--royal-blue);
+  width: 100%;
+  padding: 1rem;
+  list-style: none;
+  cursor: pointer;
+  margin-top: var(--m);
+  border: 1px solid var(--light-blue);
+  border-radius: 1rem;
+  background-color: var(--light-blue);
 }
 
 .Friend-container {
-    color: var(--green);
-    width: 100%;
-    padding: 1rem;
-    list-style: none;
-    cursor: pointer;
-    margin-top: var(--m);
-    border: 1px solid var(--green);
-    border-radius: 1rem;
-    background-color: var(--honeydew);
+  color: var(--royal-blue);
+  width: 100%;
+  padding: 1rem;
+  list-style: none;
+  cursor: pointer;
+  margin-top: var(--m);
+  border: 1px solid var(--royal-blue);
+  border-radius: 1rem;
+  background-color: var(--grey);
+}
+
+.ViewingButton {
+  background-color: var(--royal-blue);
+  color: var(--pale-blue);
+  margin-left: var(--m);
+  text-decoration: none;
+  font-family: "Roboto";
+  font-size: 16px;
+  border-radius: var(--s);
+  border-color: var(--royal-blue);
+  border-style: solid;
+  padding: 0.3rem;
+  text-align: center;
+  transition: all 0.7s;
+}
+
+.ViewingButton:hover {
+  background-color: var(--pale-blue);
+  color: var(--royal-blue);
+  margin-left: var(--m);
+  text-decoration: none;
+  font-family: "Roboto";
+  font-size: 16px;
+  border-radius: var(--s);
+  border-color: var(--royal-blue);
+  border-style: solid;
+  padding: 0.3rem;
+  text-align: center;
+  transition: all 0.7s;
 }
