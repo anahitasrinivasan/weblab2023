@@ -67,10 +67,27 @@
     color: var(--white);
 }
 
+.description-item:hover .laptop-solid.icon {
+    color: var(--white);
+}
+
+.description-item:hover .profile-solid.icon {
+    color: var(--white);
+}
+
+.description-item:hover .friends1-solid.icon {
+    color: var(--white);
+}
+
+.description-item:hover .friends2-solid.icon {
+    color: var(--white);
+}
+
 .description-item-header {
     color: var(--light-blue);
     font-size: 4vw;
     transition: all 0.7s;
+    padding-top: 5.5vw;
 }
 
 .description-item-text {
@@ -132,3 +149,120 @@ img {
     text-align: center;
     color: var(--royal-blue);
 }
+
+.icon-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.laptop-solid.icon {
+    color: var(--light-purple);
+    position: absolute;
+    width: 6vw;
+    height: 4vw;
+    border-radius: 1vw;
+    border: solid 0.5vw currentColor;
+    background-color: currentColor;
+    transition: all 0.7s;
+}
+
+.laptop-solid.icon:before {
+    content: '';
+    position: absolute;
+    left: -2vw;
+    bottom: -2.5vw;
+    width: 9vw;
+    height: 0.5vw;
+    border-radius: 0 0 1vw 1vw;
+    border: solid 0.5vw currentColor;
+    background-color: currentColor;
+}
+
+.profile-solid.icon {
+    color: var(--light-purple);
+    position: absolute;
+    margin-left: 0vw;
+    margin-top: 3.5vw;
+    width: 7vw;
+    height: 3vw;
+    border-left: solid 0.5vw currentColor;
+    border-right: solid 0.5vw currentColor;
+    border-top: solid 0.5vw currentColor;
+    border-bottom: solid 0.5vw transparent;
+    background-color: currentColor;
+    border-radius: 3vw 3vw 0 0;
+    transition: all 0.7s;
+}
+  
+.profile-solid.icon:before {
+    content: '';
+    position: absolute;
+    left: 1vw;
+    top: -5vw;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    border: solid 0.5vw currentColor;
+    background-color: currentColor;
+}
+
+.friends1-solid.icon {
+    color: var(--light-purple);
+    position: absolute;
+    margin-left: -6vw;
+    margin-top: 3.5vw;
+    width: 7vw;
+    height: 3vw;
+    border-left: solid 0.5vw currentColor;
+    border-right: solid 0.5vw currentColor;
+    border-top: solid 0.5vw currentColor;
+    border-bottom: solid 0.5vw transparent;
+    background-color: currentColor;
+    border-radius: 3vw 3vw 0 0;
+    transition: all 0.7s;
+}
+  
+.friends1-solid.icon:before {
+    content: '';
+    position: absolute;
+    left: 1vw;
+    top: -5vw;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    border: solid 0.5vw currentColor;
+    background-color: currentColor;
+}
+
+.friends2-solid.icon {
+    color: var(--light-purple);
+    position: absolute;
+    margin-left: 6vw;
+    margin-top: 3.5vw;
+    width: 7vw;
+    height: 3vw;
+    border-left: solid 0.5vw currentColor;
+    border-right: solid 0.5vw currentColor;
+    border-top: solid 0.5vw currentColor;
+    border-bottom: solid 0.5vw transparent;
+    background-color: currentColor;
+    border-radius: 3vw 3vw 0 0;
+    transition: all 0.7s;
+}
+  
+.friends2-solid.icon:before {
+    content: '';
+    position: absolute;
+    left: 1vw;
+    top: -5vw;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    border: solid 0.5vw currentColor;
+    background-color: currentColor;
+}
+  
+  
+  
