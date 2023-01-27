@@ -42,16 +42,18 @@ const Search = (props) => {
 
   return (
     <div className="Search-container">
-      <input
-        type="text"
-        value={value}
-        onChange={handleChange}
-        placeholder="search your friends"
-        className="Search-input"
-      />
-      <button type="submit" value="Search" onClick={handleSubmit} className="Search-submit">
-        Search
-      </button>
+      <div className="SearchBar">
+        <input
+          type="text"
+          value={value}
+          onChange={handleChange}
+          placeholder="search for friends"
+          className="Search-input"
+        />
+        <button type="submit" value="Search" onClick={handleSubmit} className="Search-submit">
+          Search
+        </button>
+      </div>
       <div>{usersFound}</div>
     </div>
   );

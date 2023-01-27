@@ -1,31 +1,42 @@
 .Search-container {
   color: var(--light-purple);
-  margin: 1rem 0 0 0;
+  margin: 1rem 0.5rem 0 0;
+  width: 100%;
 }
 
 .Search-input {
-  font-size: 16px;
-  padding: 0.25rem;
+  font-size: 24px;
+  padding: 0.5rem 0.25rem;
   text-align: left;
-  color: black;
-  width: 90%;
+
+  color: var(--purple);
+  width: calc(100% - 96px);
+  font-family: "Josefin Sans";
+  border-radius: 0.25rem;
+  border-color: var(--white);
 }
 
 input::placeholder {
   color: var(--light-purple);
 }
 
+.SearchBar {
+  width: 100%;
+  min-width: 292px;
+}
+
 .Search-submit {
   font-family: "Josefin Sans";
-  font-size: 16px;
+  font-size: 24px;
   color: var(--white);
   background-color: var(--purple);
   border: var(--purple) 1px solid;
   border-radius: var(--s);
 
-  padding: 0.25rem;
+  padding: 0.5rem 0.25rem;
   list-style: none;
   text-align: center;
   cursor: pointer;
   transition: all 0.7s;
+  width: 84px;
 }

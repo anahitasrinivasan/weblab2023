@@ -43,13 +43,11 @@ const PersonFound = (props) => {
   const findViewButton = () => {
     if (friendStatus === "friends") {
       return (
-        <span>
-          {/* // <Link className="FriendingButton" to={"/friends/entries/${userId}"}> */}
-          <Link to={`/friends/entries/${props.friend.idNum}`} className="FriendingButton">
+        <div>
+          <Link to={`/friends/entries/${props.friend.idNum}`} className="ViewingButton-Search">
             View Entries{" "}
           </Link>
-          {/* // <button className="FriendingButton"> View Entries</button> */}
-        </span>
+        </div>
       );
     } else {
       return null;
@@ -162,11 +160,12 @@ const PersonFound = (props) => {
 
   return (
     <div className="PersonFound-container">
-      <span>{props.name} </span>
+      <div className="Name">{props.name} </div>
       <FriendStatus friendStatus={friendStatus} />
       {friendButton}
-      {viewButton}
-      <span className="u-rightAdjust"> Friending Id: {props.friend.idNum}</span>
+      <div className="viewButtonContainer">{viewButton}</div>
+
+      <div className="FriendId"> Friending Id: {props.friend.idNum}</div>
     </div>
   );
 };
