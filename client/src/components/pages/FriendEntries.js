@@ -3,6 +3,7 @@ import { get, post } from "../../utilities";
 import Tab from "../modules/Tab.js";
 import Content from "../modules/Content.js";
 import "./FriendEntries.css";
+import "../modules/Tab.css";
 
 const FriendEntries = (props) => {
   const [friend, setFriend] = useState(undefined);
@@ -82,8 +83,8 @@ const FriendEntries = (props) => {
 
   return (
     <div>
-      <h2>You're looking at {name}'s entries</h2>
-      <ul>
+      <h2 className="FriendEntriesTitle">You're looking at {name}'s entries</h2>
+      <ul className="blue">
         <Tab id="entries" activeTab={activeTab} setActiveTab={setActiveTab} />
         <Tab id="moods" activeTab={activeTab} setActiveTab={setActiveTab} />
         <Tab id="sleep" activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -96,6 +97,8 @@ const FriendEntries = (props) => {
           items={entriesList}
           graphItems={entries}
           type="content"
+          graphBgColor="rgba(86, 128, 233, 0.2)"
+          graphLineColor="rgba(86, 128, 233, 1)"
         />
         <Content
           id="moods"
@@ -103,6 +106,8 @@ const FriendEntries = (props) => {
           items={moodList}
           graphItems={entries}
           type="mood"
+          graphBgColor="rgba(86, 128, 233, 0.2)"
+          graphLineColor="rgba(86, 128, 233, 1)"
         />
         <Content
           id="sleep"
@@ -110,6 +115,8 @@ const FriendEntries = (props) => {
           items={sleepList}
           graphItems={entries}
           type="sleep"
+          graphBgColor="rgba(86, 128, 233, 0.2)"
+          graphLineColor="rgba(86, 128, 233, 1)"
         />
         <Content
           id="water"
@@ -117,6 +124,8 @@ const FriendEntries = (props) => {
           items={waterList}
           graphItems={entries}
           type="hydration"
+          graphBgColor="rgba(86, 128, 233, 0.2)"
+          graphLineColor="rgba(86, 128, 233, 1)"
         />
       </div>
     </div>

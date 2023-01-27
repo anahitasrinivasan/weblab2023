@@ -1,6 +1,8 @@
 .App-container {
+
     max-width: 960px;
     padding: var(--m) var(--m);
     margin: 10%;
     margin-top: 100px;
   }
+

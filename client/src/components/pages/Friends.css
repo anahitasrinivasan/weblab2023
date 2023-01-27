@@ -1,0 +1,28 @@
+.Friends-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+  margin: 2rem 0 0 2rem;
+  position: absolute;
+  right: 2rem;
+  left: 1rem;
+  width: 80%;
+}
+
+.FriendsList {
+  order: 2;
+  flex: 1 1;
+  align-self: left;
+  position: static;
+  left: 0;
+}
+
+.FriendsSearch {
+  order: 1;
+  flex: 1 1 auto;
+  align-self: right;
+  margin: 0 2rem 0 0;
+}

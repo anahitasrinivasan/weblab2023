@@ -1,18 +1,18 @@
 .FriendEntries-container {
-  color: var(--teal);
+  color: var(--purple);
   width: 100%;
   padding: 1rem;
   list-style: none;
   cursor: pointer;
   margin-top: var(--m);
-  border: 1px solid var(--teal);
+  border: 1px solid var(--purple);
   border-radius: 1rem;
-  background-color: var(--light-purple);
+  background-color: var(--white);
 }
 
 .FriendEntries-container:hover {
-  background: var(--teal);
-  color: var(--light-purple);
+  background: var(--purple);
+  color: var(--white);
   transition: all 0.5s;
 }
 
@@ -22,4 +22,8 @@
 
 .FriendEntries-user {
   font-weight: 1000;
+}
+
+.FriendEntriesTitle {
+  color: var(--purple);
 }

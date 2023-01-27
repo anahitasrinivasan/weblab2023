@@ -1,31 +1,31 @@
 .PersonFound-container {
-  color: var(--green);
-  width: 100%;
-  padding: 1rem;
+  color: var(--purple);
+  width: 90%;
+  padding: 1rem 0 1rem 1rem;
   list-style: none;
   cursor: pointer;
   margin-top: var(--m);
-  border: 1px solid var(--green);
+  border: 1px solid var(--purple);
   border-radius: 1rem;
-  background-color: var(--honeydew);
+  background-color: var(--grey);
 }
 
 .FriendStatus-container {
   font-style: italic;
   border-radius: 1rem;
   padding: 0.25rem;
-  background-color: #d5e9dc;
+  background-color: var(--lavender);
 }
 
 .FriendingButton {
-  background-color: var(--green);
-  color: var(--honeydew);
+  background-color: var(--purple);
+  color: var(--lavender);
   margin-left: var(--m);
   text-decoration: none;
   font-family: "Josefin Sans";
   font-size: 16px;
   border-radius: var(--s);
-  border-color: var(--green);
+  border-color: var(--purple);
   border-style: solid;
   padding: 0.3rem;
   text-align: center;
@@ -33,14 +33,14 @@
 }
 
 .FriendingButton:hover {
-  background-color: var(--honeydew);
-  color: var(--green);
+  background-color: var(--lavender);
+  color: var(--purple);
   margin-left: var(--m);
   text-decoration: none;
   font-family: "Josefin Sans";
   font-size: 16px;
   border-radius: var(--s);
-  border-color: var(--green);
+  border-color: var(--purple);
   border-style: solid;
   padding: 0.3rem;
   text-align: center;

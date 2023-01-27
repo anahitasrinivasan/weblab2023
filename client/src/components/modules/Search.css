@@ -1,15 +1,26 @@
+.Search-container {
+  color: var(--light-purple);
+  margin: 1rem 0 0 0;
+}
+
 .Search-input {
   font-size: 16px;
   padding: 0.25rem;
   text-align: left;
+  color: black;
+  width: 90%;
+}
+
+input::placeholder {
+  color: var(--light-purple);
 }
 
 .Search-submit {
   font-family: "Josefin Sans";
   font-size: 16px;
-  color: var(--honeydew);
-  background-color: var(--green);
-  border: var(--honeydew) 1px solid;
+  color: var(--white);
+  background-color: var(--purple);
+  border: var(--purple) 1px solid;
   border-radius: var(--s);
 
   padding: 0.25rem;
