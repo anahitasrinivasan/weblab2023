@@ -1,15 +1,22 @@
+.JournalEntry-wrapper {
+  background-color: var(--grey);
+  padding: 5%;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+}
+
 .JournalEntry-input {
   font-size: 16px;
-  padding: 1rem;
+  padding-bottom: 5rem;
   text-align: center;
 }
 
 .JournalEntry-button {
-  font-family: "Roboto";
   font-size: 16px;
-  color: var(--honeydew);
-  background-color: var(--green);
-  border: var(--honeydew) 1px solid;
+  font-family: "Josefin Sans";
+  color: var(--white);
+  background-color: var(--royal-blue);
+  border: none;
   border-radius: var(--s);
   width: 30%;
   padding: 1rem;
@@ -20,34 +27,30 @@
 }
 
 .JournalEntry-button:hover {
-  color: var(--green);
-  background-color: var(--honeydew);
+  color: var(--royal-blue);
+  background-image: none;
+  background-color: white;
+  transition: all 0.7s;
 }
 
 .JournalEntry-content,
-.JournalEntry-number,
 .JournalEntry-select {
-  font-family: "Roboto";
+  font-family: "Josefin Sans";
   font-size: 16px;
   border-radius: var(--m);
   border: none;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
   border-width: 1px;
-  background-color: var(--honeydew);
-  color: var(--green);
+  background-color: var(--white);
+  color: var(--royal-blue);
   text-align: center;
 }
 
 .JournalEntry-content {
-  width: 100%;
+  width: 80%;
   height: 100px;
   padding: 15px;
   text-align: left;
-}
-
-.JournalEntry-number {
-  width: 20%;
-  height: 50px;
 }
 
 .JournalEntry-select {
@@ -55,22 +58,58 @@
   height: 50px;
 }
 
-.form-text {
-  color: var(--green)
+.JournalEntry-slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  overflow: hidden;
+  width: 80%; /* Full-width */
+  height: 2%; /* Specified height */
+  border-radius: 15px;  
+  background: var(--medgrey); /* Grey background */
+  outline: none; /* Remove outline */
 }
 
-h1 {
+.JournalEntry-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: var(--royal-blue);
+  cursor: pointer;
+}
+
+.rangeValue {
+  font-family: "Josefin Sans";
   font-size: 16px;
-  color: var(--honeydew);
-  display: inline-block;
-  background-color: var(--green);
-  border: 1px solid var(--honeydew);
-  padding: 10px;
-  border-radius: 10px;
+  width: 3vw;
+  padding: 1.5vw;
+  border-radius: var(--m);
+  border: none;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+  border-width: 1px;
+  background-color: var(--white);
+  color: var(--royal-blue);
+  text-align: center;
+  margin: auto;
+}
+
+.form-text {
+  color: var(--darkestgrey);
+  font-weight: bold;
+  font-size: 1.5vw;
+  padding: 2%;
+}
+
+.form-header {
+  color: var(--light-purple);
+  font-size: 5vw;
+  padding: 1rem;
+  text-align: center;
 }
 
 ::placeholder {
-  color: var(--green)
+  color: var(--royal-blue)
 }
 
 [type=radio] { 
@@ -84,7 +123,7 @@ h1 {
 }
 
 [type=radio]:checked + img {
-  outline: 2px solid var(--green);
+  outline: 2px solid var(--royal-blue);
 }
 
 .emotion {
@@ -93,12 +132,12 @@ h1 {
   border-radius: 50%;
 }
 
-p {
+.paragraph {
   font-size: 8px;
-  color: var(--beaver);
+  color: var(--purple);
 }
-p a {
-  color: var(--beaver);
+.paragraph a {
+  color: var(--purple);
 }
 
 .cry {
