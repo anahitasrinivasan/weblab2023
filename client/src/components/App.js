@@ -9,6 +9,7 @@ import Journal from "./pages/Journal.js";
 import Profile from "./pages/Profile.js";
 import Friends from "./pages/Friends.js";
 import FriendEntries from "./pages/FriendEntries.js";
+import Settings from "./pages/Settings.js";
 
 import "../utilities.css";
 import "./App.css";
@@ -63,6 +64,7 @@ const App = () => {
           <Profile path="/profile/:userId" />
           <Friends path="/friends/:userId" userId={userId} numId={numId} />
           <FriendEntries path="/friends/entries/:friendId" userId={userId} numId={numId} />
+          <Settings path="/settings/:userId" userId={userId} numId={numId} />
           <NotFound default />
         </Router>
       </div>
