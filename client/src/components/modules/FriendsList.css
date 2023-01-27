@@ -38,7 +38,7 @@
   background-color: var(--royal-blue);
   color: var(--pale-blue);
   text-decoration: none;
-  font-family: "Roboto";
+  font-family: "Josefin Sans";
   font-size: 16px;
   border-radius: var(--s);
   border-color: var(--royal-blue);
@@ -51,9 +51,8 @@
 .ViewingButton:hover {
   background-color: var(--pale-blue);
   color: var(--royal-blue);
-
   text-decoration: none;
-  font-family: "Roboto";
+  font-family: "Josefin Sans";
   font-size: 16px;
   border-radius: var(--s);
   border-color: var(--royal-blue);
