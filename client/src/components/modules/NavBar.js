@@ -10,6 +10,7 @@ const GOOGLE_CLIENT_ID = "770563466492-votd285cfb04ssp4vrgjgoch464n6qd5.apps.goo
 const NavBar = ({userId, handleLogin, handleLogout}) => {
     return (
     <nav className="NavBar-container">
+        <div className="NavBar-image u-inlineBlock"><img src="https://drive.google.com/uc?export=view&id=1pPg1zC-PBL-G9_wFmIjPT2kHTCJ-sAMJ" alt="cloud!"></img></div>
         <div className="NavBar-title u-inlineBlock">moody</div>
         <div className="NavBar-linkContainer u-inlineBlock">
             <Link to="/" className="NavBar-link">home</Link>

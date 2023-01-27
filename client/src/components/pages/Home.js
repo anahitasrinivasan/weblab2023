@@ -5,25 +5,43 @@ import "./Home.css";
 const Home = (props) => {
     return (
         <div className="flex-container">
+            <div className="flex-item image-stack">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616516.png" className="image-item-1" alt="cloud!"></img>
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616516.png" className="image-item-2" alt="cloud!"></img>
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616516.png" className="image-item-3" alt="cloud!"></img>
+            </div>
             <div className="flex-item">
-                <div className="img-div">
-                    <img src="https://cdn-icons-png.flaticon.com/512/616/616516.png" alt="cloud!"></img>
+                <h1 className="text-header">welcome to moody.</h1>
+            </div>
+            <div className="flex-item inner-flex-container">
+                <div className="description-item">
+                    <div className="icon-holder">
+                        <div class="laptop-solid icon"></div>
+                    </div>
+                    <p className="description-item-header">journal</p>
+                    <p className="description-item-text">write down your thoughts, log your sleep and hydration, and choose your mood as often as you want.</p>
                 </div>
+                <div className="description-item">
+                    <div className="icon-holder">
+                        <div class="profile-solid icon"></div>
+                    </div>
+                    <p className="description-item-header">profile</p>
+                    <p className="description-item-text">view your past entries and see graphs of your mood, sleep, and hydration over time.</p>
+                </div>
+                <div className="description-item">
+                    <div className="icon-holder">
+                        <div class="friends1-solid icon"></div>
+                        <div class="friends2-solid icon"></div>
+                    </div>
+                    <p className="description-item-header">friends</p>
+                    <p className="description-item-text">make friends and check up on their health.</p>
+                </div>
+            </div>
+            <div className="flex-item">
                 <a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons"
                 className="image-link u-link">
                     Cloud icons created by Freepik - Flaticon
                 </a>
-            </div>
-            <div className="flex-item">
-                <div className="text-header">welcome to moody.</div>
-                <div className="text">
-                    <h3>to get started: </h3>
-                    login and click on the <u>journal</u> tab to log an entry
-                    <h3>to see your entries: </h3>
-                    click on the <u>profile</u> tab
-                    <h3>to make friends: </h3>
-                    click on the <u>friends</u> tab to add others and view their content
-                </div>
             </div>
         </div>
     );

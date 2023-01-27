@@ -4,6 +4,8 @@
     position: fixed; 
     top: 0; 
     width: 100%;
+    display: flex;
+    align-items: center;
   }
   
   .NavBar-title {
@@ -30,7 +32,7 @@
     color: var(--royal-blue);
     margin-left: var(--m);
     text-decoration: none;
-    font-family: "Roboto";
+    font-family: "Josefin Sans";
     font-size: 16px;
     border-radius: var(--s);
     border-color: var(--royal-blue);
@@ -51,4 +53,13 @@
   
   .NavBar-link + .NavBar-link {
     margin-left: var(--m);
+  }
+
+  .NavBar-image {
+    width: 5%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
   }
