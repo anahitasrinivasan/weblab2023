@@ -12,8 +12,8 @@
 }
 
 .JournalEntry-button {
-  font-family: "Roboto";
   font-size: 16px;
+  font-family: "Josefin Sans";
   color: var(--white);
   background-color: var(--royal-blue);
   border: none;
@@ -35,7 +35,7 @@
 
 .JournalEntry-content,
 .JournalEntry-select {
-  font-family: "Roboto";
+  font-family: "Josefin Sans";
   font-size: 16px;
   border-radius: var(--m);
   border: none;
@@ -80,7 +80,7 @@
 }
 
 .rangeValue {
-  font-family: "Roboto";
+  font-family: "Josefin Sans";
   font-size: 16px;
   width: 3vw;
   padding: 1.5vw;
