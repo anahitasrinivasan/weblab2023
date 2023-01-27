@@ -3,7 +3,7 @@ import { get, post } from "../../utilities";
 import "./PersonFound.css";
 
 const FriendStatus = (props) => {
-  return <span className="FriendStatus-container"> {props.friendStatus}</span>;
+  return <div className="FriendStatus-container"> {props.friendStatus}</div>;
 };
 
 export default FriendStatus;

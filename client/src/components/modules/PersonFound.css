@@ -1,26 +1,49 @@
 .PersonFound-container {
   color: var(--purple);
-  width: 90%;
-  padding: 1rem 0 1rem 1rem;
+  width: calc(100% - 16px);
+  padding: 0.75rem 0 1rem 1rem;
   list-style: none;
   cursor: pointer;
   margin-top: var(--m);
   border: 1px solid var(--purple);
   border-radius: 1rem;
   background-color: var(--grey);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+.Name {
+  display: flex;
+  order: 1;
+  padding: 0.5rem 0.5rem;
 }
 
 .FriendStatus-container {
+  display: flex;
+  order: 2;
   font-style: italic;
   border-radius: 1rem;
   padding: 0.25rem;
+  border-radius: var(--s);
+  border-color: var(--lavender);
+  border-style: solid;
+
   background-color: var(--lavender);
+  margin: 0.25rem 0.5rem 0.5rem 0.25rem;
 }
 
 .FriendingButton {
+  margin: 0.25rem 0.5rem;
+  display: flex;
+  order: 3;
   background-color: var(--purple);
-  color: var(--lavender);
-  margin-left: var(--m);
+  color: var(--white);
+
   text-decoration: none;
   font-family: "Josefin Sans";
   font-size: 16px;
@@ -30,12 +53,13 @@
   padding: 0.3rem;
   text-align: center;
   transition: all 0.7s;
+  align-self: center;
 }
 
 .FriendingButton:hover {
   background-color: var(--lavender);
   color: var(--purple);
-  margin-left: var(--m);
+
   text-decoration: none;
   font-family: "Josefin Sans";
   font-size: 16px;
@@ -47,6 +71,49 @@
   transition: all 0.7s;
 }
 
+.ViewingButton-Search {
+  margin: 0.25rem 0.5rem;
+  background-color: var(--purple);
+  color: var(--white);
+  text-decoration: none;
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  border-radius: var(--s);
+  border-color: var(--purple);
+  border-style: solid;
+  padding: 0.3rem;
+  text-align: center;
+  transition: all 0.7s;
+  height: 16px;
+}
+
+.ViewingButton-Search:hover {
+  background-color: var(--lavender);
+  color: var(--purple);
+
+  text-decoration: none;
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  border-radius: var(--s);
+  border-color: var(--purple);
+  border-style: solid;
+  padding: 0.3rem;
+  text-align: center;
+  transition: all 0.7s;
+}
+
+.viewButtonContainer {
+  display: flex;
+  order: 4;
+  align-self: center;
+}
+
 .u-rightAdjust {
   text-align: right;
+}
+
+.FriendId {
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  order: 5;
 }
