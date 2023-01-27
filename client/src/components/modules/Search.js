@@ -46,7 +46,7 @@ const Search = (props) => {
         type="text"
         value={value}
         onChange={handleChange}
-        placeholder="don't be green"
+        placeholder="search your friends"
         className="Search-input"
       />
       <button type="submit" value="Search" onClick={handleSubmit} className="Search-submit">

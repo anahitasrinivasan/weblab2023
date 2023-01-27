@@ -74,10 +74,10 @@ const Profile = (props) => {
   return (
     <div>
       <ul className="purple">
-        <Tab id="entries" activeTab={activeTab} setActiveTab={setActiveTab} color="purple" />
-        <Tab id="moods" activeTab={activeTab} setActiveTab={setActiveTab} color="purple" />
-        <Tab id="sleep" activeTab={activeTab} setActiveTab={setActiveTab} color="purple" />
-        <Tab id="water" activeTab={activeTab} setActiveTab={setActiveTab} color="purple" />
+        <Tab id="entries" activeTab={activeTab} setActiveTab={setActiveTab} />
+        <Tab id="moods" activeTab={activeTab} setActiveTab={setActiveTab} />
+        <Tab id="sleep" activeTab={activeTab} setActiveTab={setActiveTab} />
+        <Tab id="water" activeTab={activeTab} setActiveTab={setActiveTab} />
       </ul>
       <div>
         <Content
@@ -86,6 +86,8 @@ const Profile = (props) => {
           items={entriesList}
           graphItems={entries}
           type="content"
+          graphBgColor="rgba(136, 96, 208, 0.2)"
+          graphLineColor="rgba(136, 96, 208, 1)"
         />
         <Content
           id="moods"
@@ -93,6 +95,8 @@ const Profile = (props) => {
           items={moodList}
           graphItems={entries}
           type="mood"
+          graphBgColor="rgba(136, 96, 208, 0.2)"
+          graphLineColor="rgba(136, 96, 208, 1)"
         />
         <Content
           id="sleep"
@@ -100,6 +104,8 @@ const Profile = (props) => {
           items={sleepList}
           graphItems={entries}
           type="sleep"
+          graphBgColor="rgba(136, 96, 208, 0.2)"
+          graphLineColor="rgba(136, 96, 208, 1)"
         />
         <Content
           id="water"
@@ -107,6 +113,8 @@ const Profile = (props) => {
           items={waterList}
           graphItems={entries}
           type="hydration"
+          graphBgColor="rgba(136, 96, 208, 0.2)"
+          graphLineColor="rgba(136, 96, 208, 1)"
         />
       </div>
     </div>

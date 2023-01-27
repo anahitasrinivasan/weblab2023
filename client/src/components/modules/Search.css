@@ -1,5 +1,6 @@
 .Search-container {
   color: var(--light-purple);
+  margin: 1rem 0 0 0;
 }
 
 .Search-input {
@@ -7,6 +8,7 @@
   padding: 0.25rem;
   text-align: left;
   color: black;
+  width: 90%;
 }
 
 input::placeholder {

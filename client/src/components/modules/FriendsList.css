@@ -1,31 +1,42 @@
 .Friend-header {
   color: var(--royal-blue);
-  width: 100%;
+
   padding: 1rem;
   list-style: none;
   cursor: pointer;
-  margin-top: var(--m);
+  margin-top: 0;
   border: 1px solid var(--light-blue);
-  border-radius: 1rem;
+  border-radius: 1rem 1rem 0 0;
   background-color: var(--light-blue);
+}
+
+.FriendsList-container {
+  margin: 1rem 0 0 0;
+  background-color: var(--white);
+  min-width: 160px;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 0 0 0.25rem 0;
 }
 
 .Friend-container {
   color: var(--royal-blue);
-  width: 100%;
+  min-width: 120px;
+
   padding: 1rem;
   list-style: none;
   cursor: pointer;
-  margin-top: var(--m);
+  margin: var(--m) 1rem var(--m) 1rem;
   border: 1px solid var(--royal-blue);
   border-radius: 1rem;
   background-color: var(--grey);
 }
-
+.ViewButton-container {
+  margin: 1rem 0 0 0;
+}
 .ViewingButton {
   background-color: var(--royal-blue);
   color: var(--pale-blue);
-  margin-left: var(--m);
   text-decoration: none;
   font-family: "Roboto";
   font-size: 16px;
@@ -40,7 +51,7 @@
 .ViewingButton:hover {
   background-color: var(--pale-blue);
   color: var(--royal-blue);
-  margin-left: var(--m);
+
   text-decoration: none;
   font-family: "Roboto";
   font-size: 16px;

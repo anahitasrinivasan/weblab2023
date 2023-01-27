@@ -31,11 +31,11 @@ const FriendsList = (props) => {
             <b>friend ID: </b>
             {friend.idNum}
           </div>
-          <span>
+          <div className="ViewButton-container">
             <Link to={`/friends/entries/${friend.idNum}`} className="ViewingButton">
               View Entries{" "}
             </Link>
-          </span>
+          </div>
         </div>
       ))
     );
@@ -43,7 +43,7 @@ const FriendsList = (props) => {
   };
 
   return (
-    <div>
+    <div className="FriendsList-container">
       <div className="Friend-header">your friends: </div>
       <div>{friendsDisplay}</div>
     </div>

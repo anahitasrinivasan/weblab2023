@@ -7,19 +7,11 @@ const Tab = (props) => {
     props.setActiveTab(props.id);
   };
 
-  if (props.color === "purple") {
-    return (
-      <li onClick={handleClick} className={props.activeTab === props.id ? "active" : ""}>
-        {props.id}
-      </li>
-    );
-  } else {
-    return (
-      <li onClick={handleClick} className={props.activeTab === props.id ? "active" : ""}>
-        {props.id}
-      </li>
-    );
-  }
+  return (
+    <li onClick={handleClick} className={props.activeTab === props.id ? "active" : ""}>
+      {props.id}
+    </li>
+  );
 };
 
 export default Tab;

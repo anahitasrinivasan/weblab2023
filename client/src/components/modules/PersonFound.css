@@ -1,7 +1,7 @@
 .PersonFound-container {
   color: var(--purple);
-  width: 100%;
-  padding: 1rem;
+  width: 90%;
+  padding: 1rem 0 1rem 1rem;
   list-style: none;
   cursor: pointer;
   margin-top: var(--m);
