@@ -64,6 +64,7 @@ router.post("/journal", auth.ensureLoggedIn, (req, res) => {
     mood: req.body.mood,
     sleep: req.body.sleep,
     water: req.body.water,
+    datePosted: Date.now(),
   });
 
   newEntry.save().then((entry) => res.send(entry));
@@ -169,12 +170,10 @@ router.post("/unfriend", (req, res) => {
 });
 
 router.get("/friends", (req, res) => {
-
-  if((typeof req.query.userNumId) === "undefined") {
-    console.log("sorry bby gorl")
-    res.send("sorry bby gorl")
-  }
-  else {
+  if (typeof req.query.userNumId === "undefined") {
+    console.log("sorry bby gorl");
+    res.send("sorry bby gorl");
+  } else {
     User.findOne({ idNum: req.query.userNumId }).then((user) => {
       const friends = user.friends;
       res.send(friends);
