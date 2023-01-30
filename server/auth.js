@@ -47,6 +47,7 @@ function getOrCreateUser(user) {
       requestedByUser: [],
       friends: [],
       idNum: makeIdNum(),
+      settings: [true, true, true, true],
     });
 
     return newUser.save();

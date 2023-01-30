@@ -190,6 +190,29 @@ router.get("/userFromNumId", (req, res) => {
   });
 });
 
+
+// API methods to get and change settings
+
+router.get("/settings", auth.ensureLoggedIn, (req, res) => {
+  User.findOne({ idNum: req.query.userNumId }).then((user) => {
+    const settings = user.settings;
+    res.send(settings);
+  });
+})
+
+router.post("/settings", auth.ensureLoggedIn, (req, res) => {
+  if((typeof req.user.idNum) === "undefined") {
+    console.log("sorry bby gorl")
+    res.send("sorry bby gorl")
+  }
+  else {
+    User.findOne({ idNum: req.user.idNum }).then((user) => {
+      user.settings = [...req.body.settings];
+      user.save();
+    });
+  }
+})
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);

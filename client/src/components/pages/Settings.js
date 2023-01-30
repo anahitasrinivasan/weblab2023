@@ -3,7 +3,7 @@ import Options from "../modules/Options";
 
 const Settings = (props) => {
     return (
-        <Options />
+        <Options numId={props.numId}/>
     );
 };
 
