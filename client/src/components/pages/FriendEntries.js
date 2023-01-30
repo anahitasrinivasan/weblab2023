@@ -119,8 +119,8 @@ const FriendEntries = (props) => {
             graphLineColor="rgba(86, 128, 233, 1)"
           />
         ) : (
-          <div className="FriendEntries-container">user has made this section private!</div>
-        ) }
+          <></>
+        )}
         {moodVisibility ? (
           <Content
             id="moods"
@@ -159,7 +159,7 @@ const FriendEntries = (props) => {
         />
         ) : (
           <></>
-        ) }
+        )}
       </div>
     </div>
   );
