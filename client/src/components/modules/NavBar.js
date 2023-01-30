@@ -29,6 +29,11 @@ const NavBar = ({userId, handleLogin, handleLogout}) => {
                 friends
             </Link>
             )}
+            {userId && (
+            <Link to={`/settings/${userId}`} className="NavBar-link">
+                settings
+            </Link>
+            )}
             <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
             {userId ? (
                 <button className="NavBar-login"

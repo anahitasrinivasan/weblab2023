@@ -7,6 +7,7 @@ const UserSchema = new mongoose.Schema({
   requestedByUser: Array,
   friends: Array,
   idNum: Number,
+  settings: Array,
 });
 
 // compile model from schema

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "@reach/router";
 
 import "./Home.css";
 
@@ -14,28 +15,65 @@ const Home = (props) => {
                 <h1 className="text-header">welcome to moody.</h1>
             </div>
             <div className="flex-item inner-flex-container">
-                <div className="description-item">
-                    <div className="icon-holder">
-                        <div class="laptop-solid icon"></div>
+                {props.userId ? (
+                <Link to={`/journal/${props.userId}`} className="description-item">
+                    <div>
+                        <div className="icon-holder">
+                            <div className="laptop-solid icon"></div>
+                        </div>
+                        <p className="description-item-header">journal</p>
+                        <p className="description-item-text">write down your thoughts, log your sleep and hydration, and choose your mood as often as you want.</p>
                     </div>
-                    <p className="description-item-header">journal</p>
-                    <p className="description-item-text">write down your thoughts, log your sleep and hydration, and choose your mood as often as you want.</p>
-                </div>
-                <div className="description-item">
-                    <div className="icon-holder">
-                        <div class="profile-solid icon"></div>
+                </Link>
+                ) : (
+                    <div className="description-item">
+                        <div className="icon-holder">
+                            <div className="laptop-solid icon"></div>
+                        </div>
+                        <p className="description-item-header">journal</p>
+                        <p className="description-item-text">write down your thoughts, log your sleep and hydration, and choose your mood as often as you want.</p>
                     </div>
-                    <p className="description-item-header">profile</p>
-                    <p className="description-item-text">view your past entries and see graphs of your mood, sleep, and hydration over time.</p>
-                </div>
-                <div className="description-item">
-                    <div className="icon-holder">
-                        <div class="friends1-solid icon"></div>
-                        <div class="friends2-solid icon"></div>
+                )}
+                {props.userId ? (
+                <Link to={`/profile/${props.userId}`} className="description-item">
+                    <div>
+                        <div className="icon-holder">
+                            <div className="profile-solid icon"></div>
+                        </div>
+                        <p className="description-item-header">profile</p>
+                        <p className="description-item-text">view your past entries and see graphs of your mood, sleep, and hydration over time.</p>
                     </div>
-                    <p className="description-item-header">friends</p>
-                    <p className="description-item-text">make friends and check up on their health.</p>
-                </div>
+                </Link>
+                ) : (
+                    <div className="description-item">
+                        <div className="icon-holder">
+                            <div className="profile-solid icon"></div>
+                        </div>
+                        <p className="description-item-header">profile</p>
+                        <p className="description-item-text">view your past entries and see graphs of your mood, sleep, and hydration over time.</p>
+                    </div>
+                )}
+                {props.userId ? (
+                <Link to={`/friends/${props.userId}`} className="description-item">
+                    <div>
+                        <div className="icon-holder">
+                            <div className="friends1-solid icon"></div>
+                            <div className="friends2-solid icon"></div>
+                        </div>
+                        <p className="description-item-header">friends</p>
+                        <p className="description-item-text">make friends and check up on their health.</p>
+                    </div>
+                </Link>
+                ) : (
+                    <div className="description-item">
+                        <div className="icon-holder">
+                            <div className="friends1-solid icon"></div>
+                            <div className="friends2-solid icon"></div>
+                        </div>
+                        <p className="description-item-header">friends</p>
+                        <p className="description-item-text">make friends and check up on their health.</p>
+                    </div>
+                )}
             </div>
             <div className="flex-item">
                 <a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons"
