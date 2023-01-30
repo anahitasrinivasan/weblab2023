@@ -59,6 +59,9 @@ const Options = (props) => {
 
     return (
         <div>
+            <div className="settings-header">my settings</div>
+            <div className="settings-info">flip a switch off to make a section private</div>
+            <hr color="#8860d0"/>
             <div className="switch-container">
                 <p className="switch-text">journal entries</p>
                 <label class="switch">

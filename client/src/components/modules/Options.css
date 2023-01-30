@@ -101,3 +101,17 @@ input:checked + .slider:before {
     width: 100%;
     text-align: center;
 }
+
+.settings-header {
+    color: var(--purple);
+    font-size: 3vw;
+    padding: 1rem;
+    text-align: center;
+}
+
+.settings-info {
+    color: var(--purple);
+    font-size: 1.5vw;
+    padding: 1rem;
+    text-align: center;
+}

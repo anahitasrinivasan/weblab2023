@@ -59,7 +59,7 @@ const App = () => {
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
       <div className="App-container">
         <Router>
-          <Home path="/" />
+          <Home path="/" userId={userId}/>
           <Journal path="/journal/:userId" />
           <Profile path="/profile/:userId" />
           <Friends path="/friends/:userId" userId={userId} numId={numId} />

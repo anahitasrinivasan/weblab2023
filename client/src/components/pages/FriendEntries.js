@@ -11,6 +11,11 @@ const FriendEntries = (props) => {
   const [activeTab, setActiveTab] = useState("entries");
   const [name, setName] = useState("loading");
 
+  const [entriesVisibility, setEntriesVisibility] = useState(false);
+  const [moodVisibility, setMoodVisibility] = useState(false);
+  const [sleepVisibility, setSleepVisibility] = useState(false);
+  const [hydrationVisibility, setHydrationVisibility] = useState(false);
+
   useEffect(() => {
     get("/api/userFromNumId", { IdNum: props.friendId }).then((friendInfo) => {
       console.log(friendInfo);
@@ -28,6 +33,18 @@ const FriendEntries = (props) => {
         setEntries(reversedEntries);
       });
       setName(friend.name);
+    }
+  }, [friend]);
+
+  useEffect(() => {
+    if (typeof friend === "object") {
+      get("/api/settings", { userNumId: props.friendId }).then((settings) => {
+        console.log(settings);
+        setEntriesVisibility(settings[0]);
+        setMoodVisibility(settings[1]);
+        setSleepVisibility(settings[2]);
+        setHydrationVisibility(settings[3]);
+      });
     }
   }, [friend]);
 
@@ -91,33 +108,46 @@ const FriendEntries = (props) => {
         <Tab id="water" activeTab={activeTab} setActiveTab={setActiveTab} />
       </ul>
       <div>
-        <Content
-          id="entries"
-          activeTab={activeTab}
-          items={entriesList}
-          graphItems={entries}
-          type="content"
-          graphBgColor="rgba(86, 128, 233, 0.2)"
-          graphLineColor="rgba(86, 128, 233, 1)"
-        />
-        <Content
-          id="moods"
-          activeTab={activeTab}
-          items={moodList}
-          graphItems={entries}
-          type="mood"
-          graphBgColor="rgba(86, 128, 233, 0.2)"
-          graphLineColor="rgba(86, 128, 233, 1)"
-        />
-        <Content
-          id="sleep"
-          activeTab={activeTab}
-          items={sleepList}
-          graphItems={entries}
-          type="sleep"
-          graphBgColor="rgba(86, 128, 233, 0.2)"
-          graphLineColor="rgba(86, 128, 233, 1)"
-        />
+        {entriesVisibility ? (
+          <Content
+            id="entries"
+            activeTab={activeTab}
+            items={entriesList}
+            graphItems={entries}
+            type="content"
+            graphBgColor="rgba(86, 128, 233, 0.2)"
+            graphLineColor="rgba(86, 128, 233, 1)"
+          />
+        ) : (
+          <></>
+        ) }
+        {moodVisibility ? (
+          <Content
+            id="moods"
+            activeTab={activeTab}
+            items={moodList}
+            graphItems={entries}
+            type="mood"
+            graphBgColor="rgba(86, 128, 233, 0.2)"
+            graphLineColor="rgba(86, 128, 233, 1)"
+          />
+        ) : (
+          <></>
+        ) }
+        {sleepVisibility ? (
+          <Content
+            id="sleep"
+            activeTab={activeTab}
+            items={sleepList}
+            graphItems={entries}
+            type="sleep"
+            graphBgColor="rgba(86, 128, 233, 0.2)"
+            graphLineColor="rgba(86, 128, 233, 1)"
+          />
+        ) : (
+          <></>
+        ) }
+        {hydrationVisibility ? (
         <Content
           id="water"
           activeTab={activeTab}
@@ -127,6 +157,9 @@ const FriendEntries = (props) => {
           graphBgColor="rgba(86, 128, 233, 0.2)"
           graphLineColor="rgba(86, 128, 233, 1)"
         />
+        ) : (
+          <></>
+        ) }
       </div>
     </div>
   );
