@@ -28,42 +28,70 @@ const Profile = (props) => {
 
   const hasEntries = entries.length !== 0;
   if (hasEntries) {
-    entriesList = entries.map((entry) => (
-      <div className="Profile-container">
-        <div className="Profile-user">{entry.creator_name}</div>
-        <div>
-          <b>journal entry: </b>
-          {entry.content}
+    entriesList = entries.map((entry) => {
+      const date = new Date(entry.datePosted);
+      console.log(date);
+      return (
+        <div className="Profile-container">
+          <div className="Profile-user">{entry.creator_name}</div>
+          <div>
+            <b>journal entry: </b>
+            {entry.content}
+          </div>
+          <div>
+            Posted: {date.toLocaleDateString()} {date.toLocaleTimeString()}
+          </div>
         </div>
-      </div>
-    ));
-    moodList = entries.map((entry) => (
-      <div className="Profile-container">
-        <div className="Profile-user">{entry.creator_name}</div>
-        <div>
-          <b>mood: </b>
-          {entry.mood}
+      );
+    });
+    moodList = entries.map((entry) => {
+      const date = new Date(entry.datePosted);
+      console.log(date);
+      return (
+        <div className="Profile-container">
+          <div className="Profile-user">{entry.creator_name}</div>
+          <div>
+            <b>mood: </b>
+            {entry.mood}
+          </div>
+          <div>
+            Posted: {date.toLocaleDateString()} {date.toLocaleTimeString()}
+          </div>
         </div>
-      </div>
-    ));
-    sleepList = entries.map((entry) => (
-      <div className="Profile-container">
-        <div className="Profile-user">{entry.creator_name}</div>
-        <div>
-          <b>sleep: </b>
-          {entry.sleep}
+      );
+    });
+    sleepList = entries.map((entry) => {
+      const date = new Date(entry.datePosted);
+      console.log(date);
+      return (
+        <div className="Profile-container">
+          <div className="Profile-user">{entry.creator_name}</div>
+          <div>
+            <b>sleep: </b>
+            {entry.sleep} hours
+          </div>
+          <div>
+            Posted: {date.toLocaleDateString()} {date.toLocaleTimeString()}
+          </div>
         </div>
-      </div>
-    ));
-    waterList = entries.map((entry) => (
-      <div className="Profile-container">
-        <div className="Profile-user">{entry.creator_name}</div>
-        <div>
-          <b>water: </b>
-          {entry.water}
+      );
+    });
+    waterList = entries.map((entry) => {
+      const date = new Date(entry.datePosted);
+      console.log(date);
+      return (
+        <div className="Profile-container">
+          <div className="Profile-user">{entry.creator_name}</div>
+          <div>
+            <b>water: </b>
+            {entry.water} glasses
+          </div>
+          <div>
+            Posted: {date.toLocaleDateString()} {date.toLocaleTimeString()}
+          </div>
         </div>
-      </div>
-    ));
+      );
+    });
   } else {
     entriesList = <div className="Profile-container">No entries!</div>;
     moodList = <div className="Profile-container">No entries!</div>;
