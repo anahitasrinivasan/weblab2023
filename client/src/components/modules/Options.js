@@ -99,10 +99,6 @@ const Options = (props) => {
                     submit
                 </button>
             </div>
-            <div>{entrySettings.toString()}</div>
-            <div>{moodSettings.toString()}</div>
-            <div>{sleepSettings.toString()}</div>
-            <div>{hydrationSettings.toString()}</div>
         </div>
     );
 }
