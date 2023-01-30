@@ -20,25 +20,32 @@ const FriendsList = (props) => {
   const getNames = async (idsList) => {
     const res = await Promise.all(idsList.map((id) => get("/api/userFromNumId", { IdNum: id })));
     console.log(res);
-    setFriendsDisplay(
-      res.map((friend) => (
-        <div className="Friend-container">
-          <div>
-            <b>name: </b>
-            {friend.name}
+    if (res.length === 0) {
+      console.log("no friends");
+      setFriendsDisplay(
+        <div className="Friend-container">you haven't connected with any friends yet!</div>
+      );
+    } else {
+      setFriendsDisplay(
+        res.map((friend) => (
+          <div className="Friend-container">
+            <div>
+              <b>name: </b>
+              {friend.name}
+            </div>
+            <div>
+              <b>friend ID: </b>
+              {friend.idNum}
+            </div>
+            <div className="ViewButton-container">
+              <Link to={`/friends/entries/${friend.idNum}`} className="ViewingButton">
+                View Entries{" "}
+              </Link>
+            </div>
           </div>
-          <div>
-            <b>friend ID: </b>
-            {friend.idNum}
-          </div>
-          <div className="ViewButton-container">
-            <Link to={`/friends/entries/${friend.idNum}`} className="ViewingButton">
-              View Entries{" "}
-            </Link>
-          </div>
-        </div>
-      ))
-    );
+        ))
+      );
+    }
     console.log(friendsDisplay);
   };
 
