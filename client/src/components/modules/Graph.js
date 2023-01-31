@@ -80,6 +80,7 @@ const Graph = (props) => {
       },
       y: {
         min: 0,
+        max: props.max,
         ticks: {
           stepSize: 1,
         },

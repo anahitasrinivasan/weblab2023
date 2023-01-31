@@ -141,6 +141,7 @@ const FriendEntries = (props) => {
           visible={entriesVisibility.toString()}
           graphBgColor="rgba(86, 128, 233, 0.2)"
           graphLineColor="rgba(86, 128, 233, 1)"
+          max={100}
         />
         <Content
           id="moods"
@@ -151,6 +152,7 @@ const FriendEntries = (props) => {
           visible={moodVisibility.toString()}
           graphBgColor="rgba(86, 128, 233, 0.2)"
           graphLineColor="rgba(86, 128, 233, 1)"
+          max={5}
         />
         <Content
           id="sleep"
@@ -161,6 +163,7 @@ const FriendEntries = (props) => {
           visible={sleepVisibility.toString()}
           graphBgColor="rgba(86, 128, 233, 0.2)"
           graphLineColor="rgba(86, 128, 233, 1)"
+          max={24}
         />
         <Content
           id="water"
@@ -171,6 +174,7 @@ const FriendEntries = (props) => {
           visible={hydrationVisibility.toString()}
           graphBgColor="rgba(86, 128, 233, 0.2)"
           graphLineColor="rgba(86, 128, 233, 1)"
+          max={20}
         />
       </div>
     </div>

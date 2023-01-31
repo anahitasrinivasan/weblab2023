@@ -117,6 +117,7 @@ const Profile = (props) => {
           visible="true"
           graphBgColor="rgba(136, 96, 208, 0.2)"
           graphLineColor="rgba(136, 96, 208, 1)"
+          max={100}
         />
         <Content
           id="moods"
@@ -127,6 +128,7 @@ const Profile = (props) => {
           visible="true"
           graphBgColor="rgba(136, 96, 208, 0.2)"
           graphLineColor="rgba(136, 96, 208, 1)"
+          max={5}
         />
         <Content
           id="sleep"
@@ -137,6 +139,7 @@ const Profile = (props) => {
           visible="true"
           graphBgColor="rgba(136, 96, 208, 0.2)"
           graphLineColor="rgba(136, 96, 208, 1)"
+          max={24}
         />
         <Content
           id="water"
@@ -147,6 +150,7 @@ const Profile = (props) => {
           visible="true"
           graphBgColor="rgba(136, 96, 208, 0.2)"
           graphLineColor="rgba(136, 96, 208, 1)"
+          max={20}
         />
       </div>
     </div>

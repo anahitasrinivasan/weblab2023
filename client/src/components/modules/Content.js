@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Graph from "./Graph";
 
 const Content = (props) => {
-  if (props.activeTab === props.id && props.visible === "true") {
+  if (props.activeTab === props.id && props.visible === "true" && props.id !== "entries") {
     return (
       <div>
         <div>
@@ -12,8 +12,16 @@ const Content = (props) => {
             type={props.type}
             graphBgColor={props.graphBgColor}
             graphLineColor={props.graphLineColor}
+            max={props.max}
           />
         </div>
+        <div>{props.items}</div>
+      </div>
+    );
+  }
+  else if (props.activeTab === props.id && props.visible === "true" && props.id === "entries") {
+    return (
+      <div>
         <div>{props.items}</div>
       </div>
     );
