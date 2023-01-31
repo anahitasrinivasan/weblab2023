@@ -75,7 +75,7 @@ const Graph = (props) => {
         // },
         title: {
           display: true,
-          text: "journal entry number",
+          text: "date posted",
         },
       },
       y: {
