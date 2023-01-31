@@ -24,6 +24,10 @@ const Search = (props) => {
       });
       console.log(userNames);
       setUsersFound(userNames);
+
+      if(userNames.length == 0) {
+        setUsersFound(<div className="Search-noUsersFound">no users found with this name/ID</div>);
+      }
     });
     //.then(() => console.log(usersFound));
   };

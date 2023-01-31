@@ -40,3 +40,14 @@ input::placeholder {
   transition: all 0.7s;
   width: 84px;
 }
+
+.Search-noUsersFound {
+  color: var(--purple);
+  width: calc(100% - 16px);
+  padding: 0.75rem 0 1rem 1rem;
+  list-style: none;
+  cursor: pointer;
+  margin-top: var(--m);
+  border-radius: 1rem;
+  background-color: var(--grey);
+}
