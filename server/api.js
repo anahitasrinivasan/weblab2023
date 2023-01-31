@@ -183,6 +183,20 @@ router.get("/friends", (req, res) => {
   // res.send("recieved");
 });
 
+router.get("/requests", (req, res) => {
+  if (typeof req.query.userNumId === "undefined") {
+    console.log("sorry bby gorl");
+    res.send("sorry bby gorl");
+  } else {
+    User.findOne({ idNum: req.query.userNumId }).then((user) => {
+      const requests = user.userRequested;
+      res.send(requests);
+    });
+  }
+
+  // res.send("recieved");
+});
+
 router.get("/userFromNumId", (req, res) => {
   User.findOne({ idNum: req.query.IdNum }).then((user) => {
     res.send(user);
