@@ -23,7 +23,7 @@ const Search = (props) => {
         );
         //return user["name"];
       });
-      console.log(userNames);
+      // console.log(userNames);
       setUsersFound(userNames);
 
       if(userNames.length == 0) {
@@ -32,7 +32,7 @@ const Search = (props) => {
     });
 
     if (!isNaN(value)) {
-      console.log("number!");
+      // console.log("number!");
       const number = parseInt(value);
       get("/api/userFromNumId", { IdNum: number }).then((user) => {
         const person = (
@@ -43,7 +43,7 @@ const Search = (props) => {
             numId={props.numId}
           />
         );
-        console.log(usersFound);
+        // console.log(usersFound);
         // const newList = [...usersFound, person];
         setUsersFound([person]);
       });

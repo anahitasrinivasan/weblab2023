@@ -18,11 +18,11 @@ const FriendEntries = (props) => {
 
   useEffect(() => {
     get("/api/userFromNumId", { IdNum: props.friendId }).then((friendInfo) => {
-      console.log(friendInfo);
+      // console.log(friendInfo);
       setFriend(friendInfo);
 
-      console.log("this is friend", friend);
-      console.log(name);
+      // console.log("this is friend", friend);
+      // console.log(name);
     });
   }, []);
 
@@ -39,7 +39,7 @@ const FriendEntries = (props) => {
   useEffect(() => {
     if (typeof friend === "object") {
       get("/api/settings", { userNumId: props.friendId }).then((settings) => {
-        console.log(settings);
+        // console.log(settings);
         setEntriesVisibility(settings[0]);
         setMoodVisibility(settings[1]);
         setSleepVisibility(settings[2]);

@@ -46,7 +46,7 @@ const FriendsList = (props) => {
         ))
       );
     }
-    console.log(friendsDisplay);
+    // console.log(friendsDisplay);
   };
 
   return (

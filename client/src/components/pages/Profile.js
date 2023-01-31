@@ -30,7 +30,7 @@ const Profile = (props) => {
   if (hasEntries) {
     entriesList = entries.map((entry) => {
       const date = new Date(entry.datePosted);
-      console.log(date);
+      // console.log(date);
       return (
         <div className="Profile-container">
           <div className="Profile-user">{entry.creator_name}</div>
@@ -46,7 +46,7 @@ const Profile = (props) => {
     });
     moodList = entries.map((entry) => {
       const date = new Date(entry.datePosted);
-      console.log(date);
+      // console.log(date);
       return (
         <div className="Profile-container">
           <div className="Profile-user">{entry.creator_name}</div>
@@ -62,7 +62,7 @@ const Profile = (props) => {
     });
     sleepList = entries.map((entry) => {
       const date = new Date(entry.datePosted);
-      console.log(date);
+      // console.log(date);
       return (
         <div className="Profile-container">
           <div className="Profile-user">{entry.creator_name}</div>
@@ -78,7 +78,7 @@ const Profile = (props) => {
     });
     waterList = entries.map((entry) => {
       const date = new Date(entry.datePosted);
-      console.log(date);
+      // console.log(date);
       return (
         <div className="Profile-container">
           <div className="Profile-user">{entry.creator_name}</div>
