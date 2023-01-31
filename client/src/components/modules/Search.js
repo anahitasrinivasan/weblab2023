@@ -9,6 +9,7 @@ const Search = (props) => {
 
   const onSubmit = (value) => {
     // Get the users with this name
+    // console.log(value);
 
     get("/api/users", { search: value }).then((users) => {
       const userNames = users.map((user) => {
@@ -25,7 +26,24 @@ const Search = (props) => {
       console.log(userNames);
       setUsersFound(userNames);
     });
-    //.then(() => console.log(usersFound));
+
+    if (!isNaN(value)) {
+      console.log("number!");
+      const number = parseInt(value);
+      get("/api/userFromNumId", { IdNum: number }).then((user) => {
+        const person = (
+          <PersonFound
+            name={user["name"]}
+            friend={user}
+            userId={props.userId}
+            numId={props.numId}
+          />
+        );
+        console.log(usersFound);
+        // const newList = [...usersFound, person];
+        setUsersFound([person]);
+      });
+    }
   };
 
   // called whenever the user types in the new post input box
