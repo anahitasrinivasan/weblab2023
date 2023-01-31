@@ -7,7 +7,7 @@
 
 .JournalEntry-input {
   font-size: 16px;
-  padding-bottom: 5rem;
+  padding-bottom: 4.5rem;
   text-align: center;
 }
 
@@ -99,6 +99,7 @@
   font-weight: bold;
   font-size: 1.5vw;
   padding: 2%;
+  padding-bottom: 2rem;
 }
 
 .form-header {
