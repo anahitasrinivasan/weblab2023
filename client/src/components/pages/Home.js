@@ -1,3 +1,5 @@
+// code for modal from https://www.w3schools.com/howto/howto_css_modals.asp
+
 import React, { useState, useEffect } from "react";
 import { Link } from "@reach/router";
 
