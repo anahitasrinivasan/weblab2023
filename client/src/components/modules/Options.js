@@ -11,11 +11,11 @@ const Options = (props) => {
 
     useEffect(() => {
         if (typeof props.numId === "undefined") {
-            console.log("not logged in");
+            // console.log("not logged in");
         } 
         else {
             get("/api/settings", { userNumId: props.numId }).then((settings) => {
-                console.log(settings);
+                // console.log(settings);
                 document.getElementById("entry").checked = settings[0];
                 setEntrySettings(settings[0]);
 
@@ -53,7 +53,7 @@ const Options = (props) => {
             settings: [entrySettings, moodSettings, sleepSettings, hydrationSettings]
         };
         post("/api/settings", body).then(() => {
-            console.log("done changing settings");
+            // console.log("done changing settings");
         })
     }
 

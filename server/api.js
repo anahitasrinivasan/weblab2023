@@ -132,7 +132,7 @@ router.post("/friend", (req, res) => {
   //accept a friend request
   //newFriend is the new friend's ID
 
-  console.log("recieved request");
+  // console.log("recieved request");
 
   //change the accepter's status
   User.findOne({ idNum: req.body.userNumId }).then((accepter) => {
@@ -171,7 +171,7 @@ router.post("/unfriend", (req, res) => {
 
 router.get("/friends", (req, res) => {
   if (typeof req.query.userNumId === "undefined") {
-    console.log("sorry bby gorl");
+    // console.log("sorry bby gorl");
     res.send("sorry bby gorl");
   } else {
     User.findOne({ idNum: req.query.userNumId }).then((user) => {
@@ -214,7 +214,7 @@ router.get("/settings", auth.ensureLoggedIn, (req, res) => {
 
 router.post("/settings", auth.ensureLoggedIn, (req, res) => {
   if (typeof req.user.idNum === "undefined") {
-    console.log("sorry bby gorl");
+    // console.log("sorry bby gorl");
     res.send("sorry bby gorl");
   } else {
     User.findOne({ idNum: req.user.idNum }).then((user) => {
@@ -226,7 +226,7 @@ router.post("/settings", auth.ensureLoggedIn, (req, res) => {
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
-  console.log(`API route not found: ${req.method} ${req.url}`);
+  // console.log(`API route not found: ${req.method} ${req.url}`);
   res.status(404).send({ msg: "API route not found" });
 });
 
