@@ -114,6 +114,7 @@ const Profile = (props) => {
           items={entriesList}
           graphItems={entries}
           type="content"
+          visible="true"
           graphBgColor="rgba(136, 96, 208, 0.2)"
           graphLineColor="rgba(136, 96, 208, 1)"
         />
@@ -123,6 +124,7 @@ const Profile = (props) => {
           items={moodList}
           graphItems={entries}
           type="mood"
+          visible="true"
           graphBgColor="rgba(136, 96, 208, 0.2)"
           graphLineColor="rgba(136, 96, 208, 1)"
         />
@@ -132,6 +134,7 @@ const Profile = (props) => {
           items={sleepList}
           graphItems={entries}
           type="sleep"
+          visible="true"
           graphBgColor="rgba(136, 96, 208, 0.2)"
           graphLineColor="rgba(136, 96, 208, 1)"
         />
@@ -141,6 +144,7 @@ const Profile = (props) => {
           items={waterList}
           graphItems={entries}
           type="hydration"
+          visible="true"
           graphBgColor="rgba(136, 96, 208, 0.2)"
           graphLineColor="rgba(136, 96, 208, 1)"
         />

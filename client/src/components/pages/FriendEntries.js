@@ -108,58 +108,46 @@ const FriendEntries = (props) => {
         <Tab id="water" activeTab={activeTab} setActiveTab={setActiveTab} />
       </ul>
       <div>
-        {entriesVisibility ? (
-          <Content
-            id="entries"
-            activeTab={activeTab}
-            items={entriesList}
-            graphItems={entries}
-            type="content"
-            graphBgColor="rgba(86, 128, 233, 0.2)"
-            graphLineColor="rgba(86, 128, 233, 1)"
-          />
-        ) : (
-          <></>
-        )}
-        {moodVisibility ? (
-          <Content
-            id="moods"
-            activeTab={activeTab}
-            items={moodList}
-            graphItems={entries}
-            type="mood"
-            graphBgColor="rgba(86, 128, 233, 0.2)"
-            graphLineColor="rgba(86, 128, 233, 1)"
-          />
-        ) : (
-          <></>
-        ) }
-        {sleepVisibility ? (
-          <Content
-            id="sleep"
-            activeTab={activeTab}
-            items={sleepList}
-            graphItems={entries}
-            type="sleep"
-            graphBgColor="rgba(86, 128, 233, 0.2)"
-            graphLineColor="rgba(86, 128, 233, 1)"
-          />
-        ) : (
-          <></>
-        ) }
-        {hydrationVisibility ? (
+        <Content
+          id="entries"
+          activeTab={activeTab}
+          items={entriesList}
+          graphItems={entries}
+          type="content"
+          visible={entriesVisibility.toString()}
+          graphBgColor="rgba(86, 128, 233, 0.2)"
+          graphLineColor="rgba(86, 128, 233, 1)"
+        />
+        <Content
+          id="moods"
+          activeTab={activeTab}
+          items={moodList}
+          graphItems={entries}
+          type="mood"
+          visible={moodVisibility.toString()}
+          graphBgColor="rgba(86, 128, 233, 0.2)"
+          graphLineColor="rgba(86, 128, 233, 1)"
+        />
+        <Content
+          id="sleep"
+          activeTab={activeTab}
+          items={sleepList}
+          graphItems={entries}
+          type="sleep"
+          visible={sleepVisibility.toString()}
+          graphBgColor="rgba(86, 128, 233, 0.2)"
+          graphLineColor="rgba(86, 128, 233, 1)"
+        />
         <Content
           id="water"
           activeTab={activeTab}
           items={waterList}
           graphItems={entries}
           type="hydration"
+          visible={hydrationVisibility.toString()}
           graphBgColor="rgba(86, 128, 233, 0.2)"
           graphLineColor="rgba(86, 128, 233, 1)"
         />
-        ) : (
-          <></>
-        )}
       </div>
     </div>
   );

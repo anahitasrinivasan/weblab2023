@@ -12,8 +12,8 @@
   color: var(--purple);
   width: calc(100% - 96px);
   font-family: "Josefin Sans";
-  border-radius: 0.25rem;
-  border-color: var(--white);
+  border-radius: 0.7rem;
+  border: none;
 }
 
 input::placeholder {
