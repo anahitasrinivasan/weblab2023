@@ -9,7 +9,7 @@ const FriendsList = (props) => {
 
   useEffect(() => {
     if (typeof props.numId === "undefined") {
-      console.log("not logged in");
+      // console.log("not logged in");
     } else {
       get("/api/friends", { userNumId: props.numId }).then((idsList) => {
         getNames(idsList);
@@ -19,9 +19,9 @@ const FriendsList = (props) => {
 
   const getNames = async (idsList) => {
     const res = await Promise.all(idsList.map((id) => get("/api/userFromNumId", { IdNum: id })));
-    console.log(res);
+    // console.log(res);
     if (res.length === 0) {
-      console.log("no friends");
+      // console.log("no friends");
       setFriendsDisplay(
         <div className="Friend-container">you haven't connected with any friends yet!</div>
       );

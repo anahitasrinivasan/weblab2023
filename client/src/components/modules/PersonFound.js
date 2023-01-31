@@ -20,12 +20,12 @@ const PersonFound = (props) => {
   const [viewButton, setViewButton] = useState(" ");
 
   const findFriendStatus = () => {
-    console.log("finding friend status");
+    // console.log("finding friend status");
     if (props.userId === props.friend["_id"]) {
       setFriendStatus("this is you");
     } else {
       get("/api/friendInfo", { _id: props.friend["_id"] }).then((friendInfo) => {
-        console.log(friendInfo["friends"]);
+        // console.log(friendInfo["friends"]);
         if (friendInfo["friends"].includes(props.numId)) {
           setFriendStatus("friends");
         } else if (friendInfo.userRequested.includes(props.numId)) {
@@ -33,7 +33,7 @@ const PersonFound = (props) => {
         } else if (friendInfo.requestedByUser.includes(props.numId)) {
           setFriendStatus("this user has requested you as a friend");
         } else {
-          console.log("no relation");
+          // console.log("no relation");
           setFriendStatus("no relation");
         }
       });
@@ -56,7 +56,7 @@ const PersonFound = (props) => {
 
   const findFriendingButton = () => {
     if (friendStatus === "this is you") {
-      console.log("this is you");
+      // console.log("this is you");
       return null;
     } else if (friendStatus === "friends") {
       return (
@@ -112,7 +112,7 @@ const PersonFound = (props) => {
   };
 
   const requestFriend = () => {
-    console.log(props.numId);
+    // console.log(props.numId);
     const body = { requesting: props.friend.idNum, userNumId: props.numId };
     post("/api/request", body).then(() => {
       // setFriendStatus("you've requested this user as a friend");
@@ -121,7 +121,7 @@ const PersonFound = (props) => {
   };
 
   const acceptRequest = () => {
-    console.log("accepting request");
+    // console.log("accepting request");
     post("/api/friend", { newFriend: props.friend.idNum, userNumId: props.numId }).then(() => {
       // setFriendStatus("friends");
       // setFriendButton(findFriendingButton(friendStatus));
@@ -129,7 +129,7 @@ const PersonFound = (props) => {
   };
 
   const unrequest = () => {
-    console.log("unrequesting :(");
+    // console.log("unrequesting :(");
     post("/api/unrequest", { unrequested: props.friend.idNum, userNumId: props.numId }).then(() => {
       // setFriendStatus("no relation");
       // setFriendButton(findFriendingButton(friendStatus));
@@ -137,7 +137,7 @@ const PersonFound = (props) => {
   };
 
   const unfriend = () => {
-    console.log("unfriending :/");
+    // console.log("unfriending :/");
     post("/api/unfriend", { rejected: props.friend.idNum, userNumId: props.numId }).then(() => {
       // setFriendStatus("this user has requested you as a friend");
       // setFriendButton(findFriendingButton(friendStatus));
@@ -149,13 +149,13 @@ const PersonFound = (props) => {
   }, [friendStatus]);
 
   useEffect(() => {
-    console.log("chaning view button");
+    // console.log("chaning view button");
     setViewButton(findViewButton());
   }, [friendButton]);
 
   useEffect(() => {
     findFriendStatus();
-    console.log("finding friend status in useeffect");
+    // console.log("finding friend status in useeffect");
   }, [props.name]);
 
   return (
