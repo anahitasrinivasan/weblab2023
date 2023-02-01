@@ -14,4 +14,4 @@ languages: HTML, CSS, JavaScript
 
 frameworks: Node.js, MongoDB
 
-3rd party libraries/APIs: React, Chart.js
+3rd party libraries/APIs: React, Chart.js, react-chartjs-2, chartjs-adapter-date-fns
