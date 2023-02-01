@@ -10,16 +10,26 @@ const Lists = (props) => {
   //   const [requestsIds, setRequestsIds] = useState([]);
   //   const [friendsIds, setFriendsIds] = useState([]);
 
-  const postNewFriend = async (idNum) => {
-    return post("/api/friend", { newFriend: idNum, userNumId: props.numId });
-  };
-
-  const acceptRequest = async (idNum) => {
-    await postNewFriend(idNum);
-    const idsListFromRequests = get("/api/requests", { userNumId: props.numId });
-    const idsListFromFriends = get("/api/friends", { userNumId: props.numId });
-    getNamesRequests(await idsListFromRequests);
-    getNamesFriends(await idsListFromFriends);
+  const acceptRequest = (idNum) => {
+    post("/api/friend", { newFriend: idNum, userNumId: props.numId }).then(() => {
+      //   console.log("doing gets");
+      get("/api/requests", { userNumId: props.numId }).then((idsList) => {
+        if (idsList.includes(idNum)) {
+          const requestsIds = idsList.filter((id) => id !== idNum);
+          getNamesRequests(requestsIds);
+        } else {
+          getNamesRequests(idsList);
+        }
+      });
+      get("/api/friends", { userNumId: props.numId }).then((idsList) => {
+        if (idsList.includes(idNum)) {
+          getNamesFriends(idsList);
+        } else {
+          const requestsIds = idsList.concat([idNum]);
+          getNamesFriends(requestsIds);
+        }
+      });
+    });
   };
 
   useEffect(() => {
