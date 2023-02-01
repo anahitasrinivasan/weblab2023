@@ -60,7 +60,7 @@ const RequestsList = (props) => {
         ))
       );
     }
-    console.log(requestsDisplay);
+    // console.log(requestsDisplay);
   };
 
   return (

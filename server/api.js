@@ -187,7 +187,7 @@ router.get("/friends", (req, res) => {
 
 router.get("/requests", (req, res) => {
   if (typeof req.query.userNumId === "undefined") {
-    console.log("sorry bby gorl");
+    // console.log("sorry bby gorl");
     res.send("sorry bby gorl");
   } else {
     User.findOne({ idNum: req.query.userNumId }).then((user) => {
