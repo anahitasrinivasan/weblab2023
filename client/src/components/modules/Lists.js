@@ -7,8 +7,8 @@ import "./FriendsList.css";
 const Lists = (props) => {
   const [requestsDisplay, setReqeustsDisplay] = useState([]);
   const [friendsDisplay, setFriendsDisplay] = useState([]);
-  const [requestsIds, setRequestsIds] = useState([]);
-  const [friendsIds, setFriendsIds] = useState([]);
+  //   const [requestsIds, setRequestsIds] = useState([]);
+  //   const [friendsIds, setFriendsIds] = useState([]);
 
   const postNewFriend = async (idNum) => {
     return post("/api/friend", { newFriend: idNum, userNumId: props.numId });
@@ -16,11 +16,10 @@ const Lists = (props) => {
 
   const acceptRequest = async (idNum) => {
     await postNewFriend(idNum);
-    console.log("friends ids are", friendsIds);
-    console.log("requests ids are", requestsIds);
-    setFriendsIds(friendsIds.concat([idNum]));
-    setRequestsIds(requestsIds.filter((id) => id !== idNum));
-    // console.log("changing lists");
+    const idsListFromRequests = get("/api/requests", { userNumId: props.numId });
+    const idsListFromFriends = get("/api/friends", { userNumId: props.numId });
+    getNamesRequests(await idsListFromRequests);
+    getNamesFriends(await idsListFromFriends);
   };
 
   useEffect(() => {
@@ -29,25 +28,25 @@ const Lists = (props) => {
     } else {
       get("/api/requests", { userNumId: props.numId }).then((idsList) => {
         // console.log("setting requests");
-        setRequestsIds(idsList);
-        // getNamesRequests(idsList);
+        // setRequestsIds(idsList);
+        getNamesRequests(idsList);
       });
       get("/api/friends", { userNumId: props.numId }).then((idsList) => {
-        console.log(idsList);
-        setFriendsIds(idsList);
-        // getNamesFriends(idsList);
+        // console.log(idsList);
+        // setFriendsIds(idsList);
+        getNamesFriends(idsList);
       });
     }
   }, [props.numId]);
 
-  useEffect(() => {
-    // console.log("in use effect");
-    getNamesRequests(requestsIds);
-  }, [requestsIds]);
+  //   useEffect(() => {
+  //     // console.log("in use effect");
+  //     getNamesRequests(requestsIds);
+  //   }, [requestsIds]);
 
-  useEffect(() => {
-    getNamesFriends(friendsIds);
-  }, [friendsIds]);
+  //   useEffect(() => {
+  //     getNamesFriends(friendsIds);
+  //   }, [friendsIds]);
 
   const getNamesRequests = async (idsList) => {
     // console.log("getting names requests", idsList);
