@@ -136,7 +136,9 @@ router.post("/friend", (req, res) => {
 
   //change the accepter's status
   User.findOne({ idNum: req.body.userNumId }).then((accepter) => {
-    accepter.friends = accepter.friends.concat(req.body.newFriend);
+    if (!accepter.friends.includes(req.body.newFriend)) {
+      accepter.friends = accepter.friends.concat(req.body.newFriend);
+    }
     accepter.userRequested = accepter.userRequested.filter((user) => user !== req.body.newFriend);
     accepter.save();
   });
@@ -150,7 +152,7 @@ router.post("/friend", (req, res) => {
     acceptee.save();
   });
 
-  // res.send("friend accepted");
+  res.send({ status: "success" });
 });
 
 router.post("/unfriend", (req, res) => {

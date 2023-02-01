@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-
+import { get, post } from "../../utilities";
 import Search from "../modules/Search.js";
 import FriendsList from "../modules/FriendsList.js";
 import RequestsList from "../modules/RequestsList";
+import Lists from "../modules/Lists";
 import "./Friends.css";
 // THIS IS WHERE THE STUFF ON THE DEFAULT FRIENDS SCREEN WILL GO
 
@@ -19,8 +20,7 @@ const Friends = (props) => {
       </div>
       <div className="Friends-container">
         <div className="FriendsList">
-          <FriendsList userId={props.userId} numId={props.numId} />
-          <RequestsList userId={props.userId} numId={props.numId} />
+          <Lists userId={props.userId} numId={props.numId} />
         </div>
         <div className="FriendsSearch">
           <Search userId={props.userId} numId={props.numId} />
