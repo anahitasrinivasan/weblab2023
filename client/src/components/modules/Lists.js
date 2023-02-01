@@ -10,29 +10,15 @@ const Lists = (props) => {
   const [requestsIds, setRequestsIds] = useState([]);
   const [friendsIds, setFriendsIds] = useState([]);
 
-  //   const acceptRequest = (idNum) => {
-  //     // console.log("accepting request");
-  //     post("/api/friend", { newFriend: idNum, userNumId: props.numId }).then((message) => {
-  //       console.log(message);
-  //       get("/api/requests", { userNumId: props.numId }).then((idsList) => {
-  //         getNamesRequests(idsList);
-  //       });
-  //       get("/api/friends", { userNumId: props.numId }).then((idsList) => {
-  //         getNamesFriends(idsList);
-  //       });
-  //     });
-  //   };
-
   const postNewFriend = async (idNum) => {
     return post("/api/friend", { newFriend: idNum, userNumId: props.numId });
   };
 
   const acceptRequest = async (idNum) => {
     await postNewFriend(idNum);
-    // console.log("friends ids are", friendsIds);
-    const newArray = friendsIds.concat([idNum]);
-    // console.log("newArray is ", newArray);
-    setFriendsIds(newArray);
+    console.log("friends ids are", friendsIds);
+    console.log("requests ids are", requestsIds);
+    setFriendsIds(friendsIds.concat([idNum]));
     setRequestsIds(requestsIds.filter((id) => id !== idNum));
     // console.log("changing lists");
   };
@@ -44,11 +30,12 @@ const Lists = (props) => {
       get("/api/requests", { userNumId: props.numId }).then((idsList) => {
         // console.log("setting requests");
         setRequestsIds(idsList);
-        getNamesRequests(idsList);
+        // getNamesRequests(idsList);
       });
       get("/api/friends", { userNumId: props.numId }).then((idsList) => {
+        console.log(idsList);
         setFriendsIds(idsList);
-        getNamesFriends(idsList);
+        // getNamesFriends(idsList);
       });
     }
   }, [props.numId]);
@@ -56,8 +43,11 @@ const Lists = (props) => {
   useEffect(() => {
     // console.log("in use effect");
     getNamesRequests(requestsIds);
-    getNamesFriends(friendsIds);
   }, [requestsIds]);
+
+  useEffect(() => {
+    getNamesFriends(friendsIds);
+  }, [friendsIds]);
 
   const getNamesRequests = async (idsList) => {
     // console.log("getting names requests", idsList);
