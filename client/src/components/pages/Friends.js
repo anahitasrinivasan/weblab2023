@@ -13,8 +13,8 @@ const Friends = (props) => {
       <div className="Instructions">
         <div className="instructions-header">friends</div>
         <div className="instructions-info">
-          search for your friends by name (exactly as it appears on their google account) or by
-          friendID
+          search for your friends by friendID or by name (exactly as it appears on their google
+          account)
         </div>
         <div className="instructions-info">Your friendID is: {props.numId}</div>
         <hr color="#8860d0" />
