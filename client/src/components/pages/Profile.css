@@ -14,6 +14,7 @@
     background: var(--royal-blue);
     color: var(--white);
     transition: all 0.5s;
+    cursor: default;
 }
   
 .Profile-container:first-of-type {

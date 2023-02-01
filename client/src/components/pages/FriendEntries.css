@@ -13,6 +13,7 @@
   background: var(--purple);
   color: var(--white);
   transition: all 0.5s;
+  cursor: default;
 }
 
 .FriendEntries-container:first-of-type {
